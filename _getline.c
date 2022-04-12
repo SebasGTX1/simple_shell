@@ -18,7 +18,8 @@ char *_getline (void)
 	while (1)
 	{
 		ctr = getc(stdin);
-
+		if (i == 0 && ctr == -1)
+			return (NULL);
 		if (ctr == '\n' || ctr == EOF)
 		{
 			buff[i] = '\0';

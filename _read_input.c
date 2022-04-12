@@ -7,17 +7,15 @@
 
 char *read_input(void)
 {
-  char *line = NULL;
-  ssize_t bufsize = 0; // have getline allocate a buffer for us
+	char *line;
 
-  if (getline(&line, &bufsize, stdin) == -1){
-    if (feof(stdin)) {
-      exit(EXIT_SUCCESS);  // We recieved an EOF
-    } else  {
-      perror("readline");
-      exit(EXIT_FAILURE);
-    }
-  }
-
-  return line;
+	if ((line = _getline()) == NULL)
+		if (getc(stdin) == -1)
+			exit(EXIT_SUCCESS);
+	else
+	{
+		/* error sms*/
+		exit(EXIT_FAILURE);
+	}
+	return line;
 }

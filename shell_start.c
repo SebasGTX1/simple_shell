@@ -9,7 +9,7 @@ void shell_start(void)
 	while (status)
 	{
 		printf("$ ");
-		line = _getline();
+		line = read_input();
 		args = av_line_saver(line);
 		status = _execute(args);
 		free(line);
