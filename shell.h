@@ -20,7 +20,7 @@ typedef struct build_in
 } build_in_t;
 
 char *read_input(void);
-char*_getline (void); 
+char*_getline (void);
 char * _strtok(char *str, char *d);
 void shell_start(void);
 char **av_line_saver(char *line);

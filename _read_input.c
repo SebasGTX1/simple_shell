@@ -7,9 +7,9 @@
 
 char *read_input(void)
 {
-	char *line;
+	char *line = NULL;
 
-	if ((line = _getline()) == NULL)
+	if (!(line = _getline()))
 	{
 		if (getc(stdin) == EOF)
 			exit(EXIT_SUCCESS);
