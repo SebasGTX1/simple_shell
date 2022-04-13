@@ -13,12 +13,16 @@ int _process_launcher(char **args)
   	if (pid == 0)
 	{
 		if (execv(args[0], args) == -1) 
-			perror("error");
-		exit(EXIT_FAILURE);
-  	}
+				perror("execv fail");
+		exit (EXIT_FAILURE);
+		
+			
+	}
 
 	else if (pid < 0) 
-	    perror("error");
+	{
+		perror("execv fail 2");
+	}
 	else
 	{
 		while (!WIFEXITED(status) && !WIFSIGNALED(status));
@@ -26,8 +30,8 @@ int _process_launcher(char **args)
 			wait_pid = waitpid(pid, &status, WUNTRACED | WCONTINUED);
 			if (wait_pid == -1)
 			{
-				perror("waitpid");
-				exit(EXIT_FAILURE);
+				perror("wait error");
+				exit (EXIT_FAILURE);
 			}
 		}
 	}
