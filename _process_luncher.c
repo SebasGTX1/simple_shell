@@ -14,12 +14,9 @@ int _process_launcher(char **args)
 	{
 		if (execv(args[0], args) == -1) 
 		{	
-			free(args);
 			perror("execv fail");
 		}
-		exit (EXIT_FAILURE);
-		
-			
+		return (0);
 	}
 
 	else if (pid < 0) 
