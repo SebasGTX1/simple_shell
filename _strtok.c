@@ -18,7 +18,8 @@ unsigned int check_d(char c, char *d)
 char * _strtok(char *str, char *d)
 {
 	static char *input_backup;
-	
+	char *ret;
+
 	if (!str)
 		str = input_backup;
 	if (!str)
@@ -28,7 +29,7 @@ char * _strtok(char *str, char *d)
 	if (*str == '\0')
 		return (NULL);
 
-	char *ret = str;
+	ret = str;
 
 	while (1)
 	{

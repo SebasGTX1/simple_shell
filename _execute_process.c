@@ -6,8 +6,8 @@
 
 int _execute(char **args)
 {
-	int i = 0;
 	int (*func)(char **);
+	
 	if (!args[0])
 		return (1);
 	func = get_build_in(args[0]);

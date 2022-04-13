@@ -6,7 +6,7 @@
 char *_getline (void)
 {
 	int ctr = 0, i = 0, buffsize = BUFSIZE;
-	char *buff = malloc(sizeof(char) * buffsize);
+	char *buff = malloc(buffsize);
 
 	if (!buff)
 	{
@@ -18,7 +18,7 @@ char *_getline (void)
 	while (1)
 	{
 		ctr = getc(stdin);
-		if (i == 0 && ctr == -1)
+		if (i == 0 && ctr == EOF)
 			return (NULL);
 		if (ctr == '\n' || ctr == EOF)
 		{
@@ -42,4 +42,5 @@ char *_getline (void)
 			}
 		}
 	}
+	free(buff);
 }

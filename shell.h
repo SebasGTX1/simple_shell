@@ -31,4 +31,5 @@ int ext(char **args);
 int _process_launcher(char **args);
 int _execute(char **args);
 int (*get_build_in(char *build_in))(char **args);
+char **search_no_build_in(void);
 #endif

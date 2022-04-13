@@ -35,5 +35,6 @@ char **av_line_saver(char *line)
     token = _strtok(NULL, DELIMITERS);
   }
   tokens[i] = NULL;
+  free(token);
   return tokens;
 }

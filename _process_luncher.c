@@ -13,7 +13,10 @@ int _process_launcher(char **args)
   	if (pid == 0)
 	{
 		if (execv(args[0], args) == -1) 
-				perror("execv fail");
+		{	
+			free(args);
+			perror("execv fail");
+		}
 		exit (EXIT_FAILURE);
 		
 			
@@ -25,7 +28,7 @@ int _process_launcher(char **args)
 	}
 	else
 	{
-		while (!WIFEXITED(status) && !WIFSIGNALED(status));
+		do
 		{
 			wait_pid = waitpid(pid, &status, WUNTRACED | WCONTINUED);
 			if (wait_pid == -1)
@@ -33,7 +36,7 @@ int _process_launcher(char **args)
 				perror("wait error");
 				exit (EXIT_FAILURE);
 			}
-		}
+		}while (!WIFEXITED(status) && !WIFSIGNALED(status));
 	}
   	return (1);
 }

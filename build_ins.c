@@ -20,7 +20,7 @@ int _cd(char **args)
 	return (1);
 }
 
-int hlp(char **args)
+int hlp(char **args __attribute__((unused)))
 {
 	int i = 0;
 	char *builtin_str[] = {"cd", "help", "exit"};
@@ -29,7 +29,7 @@ int hlp(char **args)
 	return (1);
 }
 
-int ext(char **args)
+int ext(char **args __attribute__((unused)))
 {
 	return (0);
 }
