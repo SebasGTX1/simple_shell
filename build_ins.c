@@ -11,6 +11,7 @@ int _cd(char **args)
 	if (!args[1])
 	{
 		fprintf(stderr, "-bash: expected argument to \"cd\"\n");
+		return (1);
 	}
 	error_check = chdir(args[1]);
 	if (error_check != 0)

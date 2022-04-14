@@ -14,7 +14,7 @@ int (*get_build_in(char *build_in))(char **args)
 
 	int i = 0;
 
-	while (i < 4)
+	while (i < 3)
 	{
 		if (strcmp(build_in, array[i].build_in) == 0)
 			return (array[i].func);
