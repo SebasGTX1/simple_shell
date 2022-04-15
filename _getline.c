@@ -19,7 +19,10 @@ char *_getline (void)
 	{
 		ctr = getc(stdin);
 		if (i == 0 && ctr == EOF)
+		{
+			free(buff);
 			return (NULL);
+		}
 		if (ctr == '\n' || ctr == EOF)
 		{
 			buff[i] = '\0';
