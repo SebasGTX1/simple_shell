@@ -9,12 +9,13 @@ int (*get_build_in(char *build_in))(char **args)
 	build_in_t array[] = {
 	{"cd", _cd},
 	{"help", hlp},
-	{"exit", ext}
+	{"exit", ext},
+	{"env", _env}
 	};
 
 	int i = 0;
 
-	while (i < 3)
+	while (i < 4)
 	{
 		if (strcmp(build_in, array[i].build_in) == 0)
 			return (array[i].func);

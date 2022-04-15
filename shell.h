@@ -22,7 +22,6 @@ typedef struct build_in
 	char *build_in;
 	int (*func)(char **args);
 } build_in_t;
-
 char *read_input(void);
 char *_getline(void);
 char *_strtok(char *str, char *d);
@@ -36,4 +35,5 @@ int _process_launcher(char **args);
 int _execute(char **args);
 int (*get_build_in(char *build_in))(char **args);
 int search_no_build_in(char **args);
+int _env(char **args __attribute__((unused)));
 #endif
