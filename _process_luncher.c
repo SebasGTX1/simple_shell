@@ -12,11 +12,11 @@ int _process_launcher(char **args)
   	pid = fork();
   	if (pid == 0)
 	{
-		if (execv(args[0], args) == -1) 
+		if (execve(args[0], args, NULL) == -1) 
 		{	
 			perror("execv fail");
 		}
-		return (0);
+		return (1);
 	}
 
 	else if (pid < 0) 

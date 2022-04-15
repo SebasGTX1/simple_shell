@@ -1,5 +1,15 @@
 #include "shell.h"
 
+void _free(char **args)
+{
+	int i = 0;
+
+	for (; args[i]; i++)
+		;
+	for (i--; i > 0; i--)
+		free(args[i]);
+	free(args);
+}
 void shell_start(void)
 {
 	char *line = NULL;
@@ -16,6 +26,7 @@ void shell_start(void)
 		status = _execute(args);
 		free(line);
 		free(args);
+		
 	}
 }
 

@@ -6,7 +6,7 @@
 char *_getline (void)
 {
 	int ctr = 0, i = 0, buffsize = BUFSIZE;
-	char *buff = malloc(buffsize);
+	char *buff = calloc(buffsize, 1);
 
 	if (!buff)
 	{

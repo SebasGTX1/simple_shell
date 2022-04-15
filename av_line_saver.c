@@ -18,9 +18,9 @@ char **av_line_saver(char *line)
   token = _strtok(line, DELIMITERS);
   while (token)
   {
-    tokens[i] = token;
+    	tokens[i] = token;/*calloc(strlen(token) + 1, 1);*/
+	/*strcpy(tokens[i], token);*/
     i++;
-
     if (i >= bufsize) 
     {
       bufsize += BUFSIZE;
@@ -31,7 +31,6 @@ char **av_line_saver(char *line)
         exit(EXIT_FAILURE);
       }
     }
-
     token = _strtok(NULL, DELIMITERS);
   }
   tokens[i] = NULL;

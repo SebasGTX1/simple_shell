@@ -6,8 +6,11 @@
 #include <string.h>
 #include <sys/types.h>
 #include <sys/wait.h>
+#include <sys/stat.h>
 #define BUFSIZE 1024
-#define DELIMITERS " :;"
+#define DELIMITERS " =:;"
+
+extern char **environ;
 /*
  * struct build_in - Struct that conteins the build_in funtions
  * @build_in: build_in identifier
@@ -31,5 +34,5 @@ int ext(char **args);
 int _process_launcher(char **args);
 int _execute(char **args);
 int (*get_build_in(char *build_in))(char **args);
-char **search_no_build_in(void);
+int search_no_build_in(char *args);
 #endif
