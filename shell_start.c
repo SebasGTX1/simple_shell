@@ -1,15 +1,9 @@
 #include "shell.h"
-
-void _free(char **args)
-{
-	int i = 0;
-
-	for (; args[i]; i++)
-		;
-	for (i--; i > 0; i--)
-		free(args[i]);
-	free(args);
-}
+/**
+ * shell_start - funtion that starts the shell and print the prompt
+ *
+ * Return: no return
+ */
 void shell_start(void)
 {
 	char *line = NULL;
@@ -26,10 +20,13 @@ void shell_start(void)
 		status = _execute(args);
 		free(line);
 		free(args);
-		
 	}
 }
-
+/**
+ * main - excecute the shell start
+ *
+ * Return: always 0
+ */
 int main(void)
 {
 	shell_start();

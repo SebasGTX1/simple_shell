@@ -1,5 +1,10 @@
 #include "shell.h"
-
+/**
+ * check_d - check if a char c is part of the delimiters
+ * @c: char to be check
+ * @d: string that contains the delimiters
+ * Return: returns 1 if c equal to any delimiter or 0 if it is not
+ */
 unsigned int check_d(char c, char *d)
 {
 	while (*d != '\0')
@@ -11,11 +16,12 @@ unsigned int check_d(char c, char *d)
 	return (0);
 }
 /**
- *
- *
- *
+ * _strtok - funtion that tokenize a string
+ * @str: string to be tokenize
+ * @d: delimiters string
+ * Return: the token
  */
-char * _strtok(char *str, char *d)
+char *_strtok(char *str, char *d)
 {
 	static char *input_backup;
 	char *ret;

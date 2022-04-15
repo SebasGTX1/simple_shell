@@ -11,11 +11,12 @@
 #define DELIMITERS " =:;"
 
 extern char **environ;
-/*
- * struct build_in - Struct that conteins the build_in funtions
+/**
+ * struct build_in - Struct of pointers to funtions
  * @build_in: build_in identifier
  * @func: function associated
  */
+
 typedef struct build_in
 {
 	char *build_in;
@@ -23,8 +24,8 @@ typedef struct build_in
 } build_in_t;
 
 char *read_input(void);
-char*_getline (void);
-char * _strtok(char *str, char *d);
+char *_getline(void);
+char *_strtok(char *str, char *d);
 void shell_start(void);
 char **av_line_saver(char *line);
 int _process_luncher(char **args);

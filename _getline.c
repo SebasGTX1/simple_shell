@@ -1,16 +1,17 @@
 #include "shell.h"
 /**
- * _gline - my own _getlinefuntion
- * return: readed buffer
+ * _getline - futions that gets a line from the stdin
+ *
+ * Return: readed buffer
  */
-char *_getline (void)
+char *_getline(void)
 {
 	int ctr = 0, i = 0, buffsize = BUFSIZE;
 	char *buff = calloc(buffsize, 1);
 
 	if (!buff)
 	{
-		dprintf(STDERR_FILENO,"%s\n", "buffer allocation failed");
+		dprintf(STDERR_FILENO, "%s\n", "buffer allocation failed");
 		free(buff);
 		exit(EXIT_FAILURE);
 	}
@@ -36,10 +37,9 @@ char *_getline (void)
 		{
 			buffsize += BUFSIZE;
 			buff = realloc(buff, buffsize);
-			
 			if (!buff)
 			{
-				dprintf(STDERR_FILENO,"%s\n", "buffer allocation failed");
+				dprintf(STDERR_FILENO, "%s\n", "buffer allocation failed");
 				free(buff);
 				exit(EXIT_FAILURE);
 			}
