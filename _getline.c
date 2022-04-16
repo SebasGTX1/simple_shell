@@ -29,10 +29,11 @@ char *_getline(void)
 			buff[i] = '\0';
 			return (buff);
 		}
+		else if (ctr == '\t')
+			continue;
 		else
-		{
 			buff[i] = ctr;
-		} i++;
+		i++;
 		if (i >= buffsize)
 		{
 			buffsize += BUFSIZE;
@@ -45,5 +46,4 @@ char *_getline(void)
 			}
 		}
 	}
-	free(buff);
 }
