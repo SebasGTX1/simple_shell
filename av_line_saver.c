@@ -13,7 +13,6 @@ char **av_line_saver(char *line)
 
 	if (!tokens)
 	{
-		fprintf(stderr, "lsh: allocation error\n");
 		exit(EXIT_FAILURE);
 	}
 	token = _strtok(line, DELIMITERS);
@@ -21,16 +20,6 @@ char **av_line_saver(char *line)
 	{
 		tokens[i] = token;
 		i++;
-		if (i >= bufsize)
-		{
-			bufsize += BUFSIZE;
-			tokens = realloc(tokens, bufsize * sizeof(char *));
-			if (!tokens)
-			{
-				fprintf(stderr, "lsh: allocation error\n");
-				exit(EXIT_FAILURE);
-			}
-		}
 		token = _strtok(NULL, DELIMITERS);
 	}
 	tokens[i] = NULL;

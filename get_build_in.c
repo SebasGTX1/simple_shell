@@ -13,13 +13,18 @@ int (*get_build_in(char *build_in))(char **args)
 	{"env", _env}
 	};
 
-	int i = 0;
+	int i = 0, s_bi = _strlen(build_in), s_abi = 0;
 
 	while (i < 4)
 	{
-		if (_strncmp(build_in, array[i].build_in, _strlen(build_in)) == 0)
-			return (array[i].func);
+		s_abi = _strlen(array[i].build_in);
+		if (s_abi == s_bi)
+		{
+			if (_strncmp(build_in, array[i].build_in, s_bi) == 0)
+				return (array[i].func);
+			}
 		i++;
+
 	}
 	return (0);
 }

@@ -7,11 +7,10 @@
 char *_getline(void)
 {
 	int ctr = 0, i = 0, buffsize = BUFSIZE;
-	char *buff = calloc(buffsize, 1);
+	char *buff = _calloc(buffsize, 1);
 
 	if (!buff)
 	{
-		dprintf(STDERR_FILENO, "%s\n", "buffer allocation failed");
 		free(buff);
 		exit(EXIT_FAILURE);
 	}
@@ -37,10 +36,9 @@ char *_getline(void)
 		if (i >= buffsize)
 		{
 			buffsize += BUFSIZE;
-			buff = realloc(buff, buffsize);
+			_realloc(buff, buffsize);
 			if (!buff)
 			{
-				dprintf(STDERR_FILENO, "%s\n", "buffer allocation failed");
 				free(buff);
 				exit(EXIT_FAILURE);
 			}
