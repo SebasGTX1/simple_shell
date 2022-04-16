@@ -3,7 +3,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include <string.h>
 #include <sys/types.h>
 #include <sys/wait.h>
 #include <sys/stat.h>
@@ -36,4 +35,8 @@ int _execute(char **args);
 int (*get_build_in(char *build_in))(char **args);
 int search_no_build_in(char **args);
 int _env(char **args __attribute__((unused)));
+size_t _strlen(char *str);
+char *_strcpy(char *dest, char *src);
+int _strncmp(char *s1, char *s2, int n);
+void _strcat(char *s1, char *s2);
 #endif

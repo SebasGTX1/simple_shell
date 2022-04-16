@@ -58,7 +58,7 @@ int _env(char **args __attribute__((unused)))
 
 	for (; environ[i]; i++)
 	{
-		nbytes = strlen(environ[i]);
+		nbytes = _strlen(environ[i]);
 		write(STDOUT_FILENO, environ[i], nbytes);
 		write(STDOUT_FILENO, "\n", 1);
 	}
