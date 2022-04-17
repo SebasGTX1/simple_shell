@@ -3,14 +3,15 @@
  * _execute - funtion that check if the input is
  * a command (build in, non build in, a path of a
  * non build in or not a command at all)
+ * @line: input line
  * @args: the argument list
  * Return: always 1 (exception: the excecution of the
  * exit build in)
  */
 
-int _execute(char **args)
+int _execute(char *line, char **args)
 {
-	int (*func)(char **);
+	int (*func)(char *, char **);
 	struct stat sb;
 
 	if (!args[0])
@@ -45,5 +46,5 @@ int _execute(char **args)
 			return (1);
 		}
 	}
-	return (func(args));
+	return (func(line, args));
 }

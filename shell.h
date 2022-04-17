@@ -1,5 +1,6 @@
 #ifndef _SHELL_
 #define _SHELL_
+#include <ctype.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -19,7 +20,7 @@ extern char **environ;
 typedef struct build_in
 {
 	char *build_in;
-	int (*func)(char **args);
+	int (*func)(char *line, char **args);
 } build_in_t;
 char *read_input(void);
 char *_getline(void);
@@ -27,14 +28,14 @@ char *_strtok(char *str, char *d);
 void shell_start(void);
 char **av_line_saver(char *line);
 int _process_luncher(char **args);
-int _cd(char **args);
-int hlp(char **args);
-int ext(char **args);
+int _cd(char *line __attribute__((unused)), char **args);
+int hlp(char *line __attribute__((unused)), char **args);
+int ext(char *line, char **args);
 int _process_launcher(char **args);
-int _execute(char **args);
-int (*get_build_in(char *build_in))(char **args);
+int _execute(char *line, char **args);
+int (*get_build_in(char *build_in))(char *line, char **args);
 int search_no_build_in(char **args);
-int _env(char **args __attribute__((unused)));
+int _env(char *line, char **args __attribute__((unused)));
 size_t _strlen(char *str);
 char *_strcpy(char *dest, char *src);
 int _strncmp(char *s1, char *s2, int n);

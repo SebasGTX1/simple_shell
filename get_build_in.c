@@ -4,7 +4,7 @@
  * @build_in: build in identifier
  * Return: the build in funtion usage
  */
-int (*get_build_in(char *build_in))(char **args)
+int (*get_build_in(char *build_in))(char *, char **args)
 {
 	build_in_t array[] = {
 	{"cd", _cd},
