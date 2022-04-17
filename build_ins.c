@@ -24,8 +24,20 @@ int _cd(char *line __attribute__((unused)), char **args)
 			}
 		}
 	}
+	if ((_strncmp("-", args[1], 1)) == 0)
+	{
+		for (; env[j]; j++)
+		{
+			if ((_strncmp("OLDPWD", env[j], 6)) == 0)
+			{
+				home = _strtok(env[j], "=");
+				home = _strtok(NULL, "=");
+				chdir(home);
+				return (1);
+			}
+		}
+	}
 	chdir(args[1]);
-
 	error_check = chdir(args[1]);
 	if (error_check != 0)
 	{
@@ -33,7 +45,6 @@ int _cd(char *line __attribute__((unused)), char **args)
 	}
 	return (1);
 }
-
 /**
  * hlp - funtion that recreates the help build in
  * @l: input line
