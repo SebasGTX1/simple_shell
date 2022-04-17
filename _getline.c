@@ -23,7 +23,7 @@ char *_getline(void)
 			free(buff);
 			return (NULL);
 		}
-		if (ctr == '\n' || ctr == EOF)
+		if (ctr == '\n' || ctr == EOF || ctr == ';')
 		{
 			buff[i] = '\0';
 			return (buff);
