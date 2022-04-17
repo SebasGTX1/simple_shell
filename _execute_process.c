@@ -6,11 +6,12 @@
  * @line: input line
  * @args: the argument list
  * @exe: shell exe
+ * @count: times that the shell prompt is printed
  * Return: always 1 (exception: the excecution of the
  * exit build in)
  */
 
-int _execute(char *line, char **args, char *exe)
+int _execute(char *line, char **args, char *exe, int count)
 {
 	int (*func)(char *, char **);
 	struct stat sb;
@@ -36,7 +37,7 @@ int _execute(char *line, char **args, char *exe)
 
 			for (; args[i]; i++)
 				;
-			i_char = i + '0';
+			i_char = count + '0';
 			write(STDERR_FILENO, exe, _strlen(exe));
 			write(STDERR_FILENO, ": ", 2);
 			write(STDERR_FILENO, &i_char, 1);

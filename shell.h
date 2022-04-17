@@ -32,7 +32,7 @@ int _cd(char *line __attribute__((unused)), char **args);
 int hlp(char *line __attribute__((unused)), char **args);
 int ext(char *line, char **args);
 int _process_launcher(char **args);
-int _execute(char *line, char **args, char *exe);
+int _execute(char *line, char **args, char *exe, int count);
 int (*get_build_in(char *build_in))(char *line, char **args);
 int search_no_build_in(char **args);
 int _env(char *line, char **args __attribute__((unused)));

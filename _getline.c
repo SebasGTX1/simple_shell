@@ -18,6 +18,7 @@ char *_getline(void)
 	while (1)
 	{
 		ctr = getc(stdin);
+		/*read(STDIN_FILENO, &ctr, 1);*/
 		if (i == 0 && ctr == EOF)
 		{
 			free(buff);
