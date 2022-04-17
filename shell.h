@@ -25,14 +25,14 @@ typedef struct build_in
 char *read_input(void);
 char *_getline(void);
 char *_strtok(char *str, char *d);
-void shell_start(void);
+void shell_start(char *exe);
 char **av_line_saver(char *line);
 int _process_luncher(char **args);
 int _cd(char *line __attribute__((unused)), char **args);
 int hlp(char *line __attribute__((unused)), char **args);
 int ext(char *line, char **args);
 int _process_launcher(char **args);
-int _execute(char *line, char **args);
+int _execute(char *line, char **args, char *exe);
 int (*get_build_in(char *build_in))(char *line, char **args);
 int search_no_build_in(char **args);
 int _env(char *line, char **args __attribute__((unused)));

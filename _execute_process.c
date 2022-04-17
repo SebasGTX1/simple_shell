@@ -5,11 +5,12 @@
  * non build in or not a command at all)
  * @line: input line
  * @args: the argument list
+ * @exe: shell exe
  * Return: always 1 (exception: the excecution of the
  * exit build in)
  */
 
-int _execute(char *line, char **args)
+int _execute(char *line, char **args, char *exe)
 {
 	int (*func)(char *, char **);
 	struct stat sb;
@@ -31,12 +32,12 @@ int _execute(char *line, char **args)
 		else
 		{
 			int i = 0;
-			char i_char, *args_0 = "/hsh", *args_1 = args[0];
+			char i_char, *args_1 = args[0];
 
 			for (; args[i]; i++)
 				;
 			i_char = i + '0';
-			write(STDERR_FILENO, args_0, _strlen(args_0));
+			write(STDERR_FILENO, exe, _strlen(exe));
 			write(STDERR_FILENO, ": ", 2);
 			write(STDERR_FILENO, &i_char, 1);
 			write(STDERR_FILENO, ": ", 2);
