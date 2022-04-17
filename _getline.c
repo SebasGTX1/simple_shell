@@ -6,7 +6,7 @@
  */
 char *_getline(void)
 {
-	int ctr = 0, i = 0, buffsize = BUFSIZE;
+	int ctr = 0, i = 0, r = 0, buffsize = BUFSIZE;
 	char *buff = _calloc(buffsize, 1);
 
 	if (!buff)
@@ -17,14 +17,13 @@ char *_getline(void)
 
 	while (1)
 	{
-		ctr = getc(stdin);
-		/*read(STDIN_FILENO, &ctr, 1);*/
-		if (i == 0 && ctr == EOF)
+		r = read(STDIN_FILENO, &ctr, 1);
+		if (r == 0)
 		{
 			free(buff);
 			return (NULL);
 		}
-		if (ctr == '\n' || ctr == EOF || ctr == ';')
+		if (ctr == '\n' || r == 0 || ctr == ';')
 		{
 			buff[i] = '\0';
 			return (buff);

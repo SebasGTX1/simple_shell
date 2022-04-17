@@ -7,13 +7,13 @@
 
 char *read_input(void)
 {
-	char *line = NULL;
+	char *line = NULL, finish = '\n';
 
 	line = _getline();
 	if (!line)
 	{
-		if (getc(stdin) == EOF)
-			exit(EXIT_SUCCESS);
+		write(STDOUT_FILENO, &finish, 1);
+		exit(EXIT_SUCCESS);
 	}
 	return (line);
 }

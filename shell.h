@@ -42,4 +42,5 @@ int _strncmp(char *s1, char *s2, int n);
 void _strcat(char *s1, char *s2);
 void *_calloc(unsigned int nmemb, unsigned int size);
 void _realloc(char *ptr, int new_size);
+char *_number_to_char(int n);
 #endif

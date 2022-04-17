@@ -13,6 +13,7 @@ void shell_start(char *exe)
 	while (status)
 	{
 		tty == 1 ? write(STDOUT_FILENO, "theHELLshell$ ", 14) : tty;
+		fflush(stdin);
 		line = read_input();
 		args = av_line_saver(line);
 		status = _execute(line, args, exe, count);
@@ -27,12 +28,12 @@ void shell_start(char *exe)
  * return: no return
  */
 
-void handler(int sig_num)
+static void handler(int sig_num __attribute__((unused)))
 {
-	char interruption __attribute__((unused));
-	(void)sig_num;
-	interruption = 1;
+	signal(SIGINT, handler);
+	fflush(stdout);
 }
+
 /**
  * main - excecute the shell start
  * @ac: arguments
@@ -41,10 +42,9 @@ void handler(int sig_num)
  */
 int main(int ac __attribute__((unused)), char **av)
 {
-	struct sigaction action = { 0 };
 
-	action.sa_handler = handler;
-	sigaction(SIGINT, &action, NULL);
+	/*signal(SIGINT, handler);*/
+	signal(SIGINT, SIG_IGN);
 	shell_start(av[0]);
 	return (0);
 }

@@ -18,7 +18,6 @@ int _execute(char *line, char **args, char *exe, int count)
 
 	if (!args[0])
 		return (1);
-
 	if (stat(args[0], &sb) != -1)
 		return (_process_launcher(args));
 	func = get_build_in(args[0]);
@@ -32,19 +31,24 @@ int _execute(char *line, char **args, char *exe, int count)
 		}
 		else
 		{
-			int i = 0;
-			char i_char, *args_1 = args[0];
+			int i = 0, j = 0;
+			char *i_char, *args_1 = args[0];
 
 			for (; args[i]; i++)
 				;
-			i_char = count + '0';
+			i_char = _number_to_char(count);
 			write(STDERR_FILENO, exe, _strlen(exe));
 			write(STDERR_FILENO, ": ", 2);
-			write(STDERR_FILENO, &i_char, 1);
+			while (i_char[j])
+			{
+				write(STDERR_FILENO, &i_char[j], 1);
+				j++;
+			}
 			write(STDERR_FILENO, ": ", 2);
 			write(STDERR_FILENO, args_1, _strlen(args_1));
 			write(STDERR_FILENO, ": ", 2);
 			write(STDERR_FILENO, "not found\n", 10);
+			free(i_char);
 			return (1);
 		}
 	}
