@@ -30,8 +30,9 @@ void shell_start(char *exe)
 
 static void handler(int sig_num __attribute__((unused)))
 {
-	signal(SIGINT, handler);
-	fflush(stdout);
+	char finish = '\n';
+	write(STDOUT_FILENO, &finish, 1);
+	write(STDOUT_FILENO, "theHELLshell$ ", 14);
 }
 
 /**
@@ -43,8 +44,7 @@ static void handler(int sig_num __attribute__((unused)))
 int main(int ac __attribute__((unused)), char **av)
 {
 
-	/*signal(SIGINT, handler);*/
-	signal(SIGINT, SIG_IGN);
+	signal(SIGINT, handler);
 	shell_start(av[0]);
 	return (0);
 }
