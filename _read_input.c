@@ -8,11 +8,13 @@
 char *read_input(void)
 {
 	char *line = NULL, finish = '\n';
+	int tty = 1;
 
+	isatty(STDIN_FILENO) == 0 ? tty = 0 : tty;
 	line = _getline();
 	if (!line)
 	{
-		write(STDOUT_FILENO, &finish, 1);
+		tty == 1 ? write(STDOUT_FILENO, &finish, 1) : tty;
 		exit(EXIT_SUCCESS);
 	}
 	return (line);
