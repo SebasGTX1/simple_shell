@@ -19,6 +19,7 @@ int add_env(char *new_env_var)
 	new_env[i] = _strcpy(new_env[i], new_env_var);
 	environ = new_env;
 	environ[i + 1] = NULL;
+	free(new_env_var);
 
 	return (1);
 }
@@ -68,6 +69,31 @@ int _setenv(char *line __attribute__((unused)), char **args)
 			env[i] = update_env_var;
 			_strcat(update_env_var, args[1]), _strcat(update_env_var, "=");
 			_strcat(update_env_var, args[2]);
+		}
+	}
+	return (1);
+}
+/**
+ * _unsetenv - funtion that recreates the setenv build in
+ * @line: input line
+ * @args: the argument list
+ * Return: always 1
+ */
+
+int _unsetenv(char *line __attribute__((unused)), char **args)
+{
+	char **env = environ;
+	int i = 0, size = 0;
+
+	for (; env[size]; size++)
+		;
+	for (; env[i]; i++)
+	{
+		if (_strncmp(env[i], args[1], _strlen(args[1])) == 0)
+		{
+			for (; i < size - 1; i++)
+				env[i] = env[i + 1];
+			env[i] = NULL;
 		}
 	}
 	return (1);

@@ -11,12 +11,13 @@ int (*get_build_in(char *build_in))(char *, char **args)
 	{"help", hlp},
 	{"exit", ext},
 	{"env", _env},
-	{"setenv", _setenv}
+	{"setenv", _setenv},
+	{"unsetenv", _unsetenv}
 	};
 
 	int i = 0, s_bi = _strlen(build_in), s_abi = 0;
 
-	while (i < 5)
+	while (i < 6)
 	{
 		s_abi = _strlen(array[i].build_in);
 		if (s_abi == s_bi)
