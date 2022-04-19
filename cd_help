@@ -1,0 +1,12 @@
+cd: cd DIRECTORY
+    Change the shell working directory.
+
+    Options:
+    - go to the OLDPWD
+    "" when no DIRECTORY is given to cd the default dir is HOME
+
+    Arguments:
+    DIRECTORY is the path of the directory that the user want to entry
+
+    Exit status:
+    always returns 1

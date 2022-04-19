@@ -49,23 +49,6 @@ int _cd(char *line __attribute__((unused)), char **args)
 	return (1);
 }
 /**
- * hlp - funtion that recreates the help build in
- * @l: input line
- * @args: the argument list
- * Return: always 1
- */
-
-int hlp(char *l __attribute__((unused)), char **args __attribute__((unused)))
-{
-	int i = 0;
-	char *builtin_str[] = {"cd", "help", "exit"};
-
-	for (; i < 3; i++)
-		printf("  %s\n", builtin_str[i]);
-	return (1);
-}
-
-/**
  * ext - funtion that recreates the exit build in
  * @line: input line
  * @args: the argument list

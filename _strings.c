@@ -68,5 +68,22 @@ int _strncmp(char *s1, char *s2, int n)
 	}
 	return (0);
 }
+/**
+ * _strcmp - Function that compares two strings
+ * @s1: pointer to string
+ * @s2: pointer to string
+ * Return: 0 if s1 == s2 or -1 in otherwise
+ */
+int _strcmp(const char *s1, const char *s2)
+{
+	size_t i = 0;
 
-
+	while (s1[i] || s2[i])
+	{
+		if (s1[i] == s2[i])
+			++i;
+		else
+			return (s1[i] - s2[i]);
+	}
+	return (0);
+}

@@ -46,4 +46,5 @@ void *_calloc(unsigned int nmemb, unsigned int size);
 void _realloc(char *ptr, int new_size);
 char *_number_to_char(int n);
 int _setenv(char *line __attribute__((unused)), char **args);
+int _strcmp(const char *s1, const char *s2);
 #endif
