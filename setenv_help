@@ -5,7 +5,7 @@ setenv: setenv VARIABLE VALUE
     none
 
     Arguments:
-    VARIABLE is the variable to be set and VALUE is the setting value to the    VARIABLE
+    VARIABLE is the variable to be set and VALUE is the setting value for the VARIABLE
 
     Exit status:
     always returns 1
