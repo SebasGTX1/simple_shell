@@ -11,6 +11,7 @@
 #define DELIMITERS " =:;\t"
 
 extern char **environ;
+/*static char **last_environ;*/
 /**
  * struct build_in - Struct of pointers to funtions
  * @build_in: build_in identifier
@@ -43,4 +44,5 @@ void _strcat(char *s1, char *s2);
 void *_calloc(unsigned int nmemb, unsigned int size);
 void _realloc(char *ptr, int new_size);
 char *_number_to_char(int n);
+int _setenv(char *line __attribute__((unused)), char **args);
 #endif
