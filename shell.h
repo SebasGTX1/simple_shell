@@ -8,7 +8,7 @@
 #include <sys/wait.h>
 #include <sys/stat.h>
 #define BUFSIZE 1024
-#define DELIMITERS " =:;\t"
+#define DELIMITERS " =:;\t\""
 
 extern char **environ;
 /*static char **last_environ;*/
