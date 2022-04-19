@@ -23,6 +23,8 @@ typedef struct build_in
 	char *build_in;
 	int (*func)(char *line, char **args);
 } build_in_t;
+int _isalpha(char *s);
+int _atoi(char *s);
 char *_getenv(const char *name);
 char *read_input(void);
 char *_getline(void);

@@ -60,11 +60,21 @@ int ext(char *line, char **args)
 
 	if (args[1])
 	{
-		status = atoi(args[1]); /* make the atoi fun*/
-		free(line), free(args);
-		exit(status);
+		char error[] = "Invalid exit status\n";
+
+		if (_isalpha(args[1]) == 1)
+		{
+			status = _atoi(args[1]);
+			free(line), free(args);
+			exit(status);
+		}
+		else
+		{
+			write(STDOUT_FILENO, error, _strlen(error));
+			return (1);
+		}
 	}
-		return (0);
+		return (EXIT_SUCCESS);
 
 }
 /**
