@@ -25,6 +25,7 @@ char *_getline(void)
 		}
 		if (ctr == '\n' || r == 0 || ctr == ';')
 		{
+			i++;
 			buff[i] = '\0';
 			return (buff);
 		}

@@ -8,22 +8,15 @@
 
 int search_no_build_in(char **args)
 {
-	int j = 0;
-	char **env = environ, *copy, *token;
+	char *copy, *token;
 	char *command = calloc(_strlen(args[0]) + 3, 1);
-	char *dest = NULL;
+	char *dest = NULL, *path = NULL;
 	size_t command_size;
 	struct stat sb;
 
-	for (; env[j]; j++)
-	{
-		if ((_strncmp("PATH", env[j], 4)) == 0)
-		{
-			break;
-		}
-	}
-	copy = malloc(_strlen(env[j]) + 1);
-	_strcpy(copy, env[j]);
+	path = _getenv("PATH");
+	copy = malloc(_strlen(path) + 1);
+	_strcpy(copy, path);
 	_strcat(command, "/");
 	_strcat(command, args[0]);
 	token = _strtok(copy, DELIMITERS);

@@ -8,7 +8,7 @@
 #include <sys/wait.h>
 #include <sys/stat.h>
 #define BUFSIZE 1024
-#define DELIMITERS " =:;\t\""
+#define DELIMITERS " =:;\t\"\n"
 
 extern char **environ;
 /*static char **last_environ;*/
@@ -23,6 +23,7 @@ typedef struct build_in
 	char *build_in;
 	int (*func)(char *line, char **args);
 } build_in_t;
+char *_getenv(const char *name);
 char *read_input(void);
 char *_getline(void);
 char *_strtok(char *str, char *d);
