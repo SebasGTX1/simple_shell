@@ -85,7 +85,6 @@ int _env(char *l, char **args __attribute__((unused)), int *fail)
 {
 	unsigned int i = 0, nbytes;
 
-	UNUSED(fail);
 	UNUSED(l);
 	for (; environ[i]; i++)
 	{
@@ -93,5 +92,6 @@ int _env(char *l, char **args __attribute__((unused)), int *fail)
 		write(STDOUT_FILENO, environ[i], nbytes);
 		write(STDOUT_FILENO, "\n", 1);
 	}
+	*fail = 0;
 	return (1);
 }
