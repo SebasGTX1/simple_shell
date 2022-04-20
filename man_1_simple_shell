@@ -1,6 +1,6 @@
 .TL
 This is the manpage of the SeRiShell project in Holberton School
-.TH "SeRiShell" "21" April 2022" "0x16. C"
+.TH "SeRiShell" "C17 0x16. C"
 
 .SH NAME
 .B SeRiShell - Standard input line for receiving instructions via commands 
@@ -84,6 +84,8 @@ Historial de cambios.
 
 .SH AUTHORS
 Written by Sebastián García & Ricardo Montaña.
+
+21 April 2022
 
 .SH COPYRIGHT
 Especificar la información del copyright.
