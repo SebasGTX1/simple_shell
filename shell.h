@@ -8,7 +8,7 @@
 #include <sys/wait.h>
 #include <sys/stat.h>
 #define BUFSIZE 5024
-#define DELIMITERS " =:;\t\"\n"
+#define DELIMITERS " =:;\t\"\n+-"
 #define UNUSED(x) (void)(x)
 
 extern char **environ;
