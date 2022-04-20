@@ -40,5 +40,5 @@ int search_no_build_in(char **args)
 	}
 	free(command);
 	free(copy);
-	return (0);
+	return (127);
 }
