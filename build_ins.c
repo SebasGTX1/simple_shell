@@ -1,4 +1,5 @@
 #include "shell.h"
+#include <limits.h>
 /**
  * _cd - funtion that recreates the cd build in
  * @line: input line
@@ -54,20 +55,21 @@ int _cd(char *line __attribute__((unused)), char **args, int *fail)
 int ext(char *line, char **args, int *fail)
 {
 	int status;
+	char error[] = "./hsh: 1: exit: Illegal number: ", finish = '\n';
 
 	if (args[1])
 	{
-		char error[] = "Invalid exit status\n";
-
-		if (_isalpha(args[1]) == 1)
+		status = _atoi(args[1]);
+		if (_isalpha(args[1]) == 1 && status >= 0 && status != INT_MAX)
 		{
-			status = _atoi(args[1]);
 			free(line), free(args);
 			exit(status);
 		}
 		else
 		{
 			write(STDOUT_FILENO, error, _strlen(error));
+			write(STDOUT_FILENO, args[1], _strlen(args[1]));
+			write(STDOUT_FILENO, &finish, 1);
 			return (1);
 		}
 	}

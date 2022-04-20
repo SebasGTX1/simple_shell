@@ -23,7 +23,7 @@ int _isalpha(char *s)
 int _atoi(char *s)
 {
 
-	unsigned int count = 0, t = 0, i = 0, sig = 1, m = 1, intt = 0;
+	int count = 0, t = 0, i = 0, sig = 1, m = 1, intt = 0;
 
 	while (*(s + count) != '\0')
 	{
@@ -34,7 +34,7 @@ int _atoi(char *s)
 		}
 		if (*(s + count) == '-')
 		{
-			sig *= -1;
+			return (-1);
 		}
 
 		if (*(s + count) >= '0' && *(s + count) <= '9')
