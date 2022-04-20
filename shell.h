@@ -7,7 +7,7 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 #include <sys/stat.h>
-#define BUFSIZE 1024
+#define BUFSIZE 5024
 #define DELIMITERS " =:;\t\"\n"
 
 extern char **environ;
