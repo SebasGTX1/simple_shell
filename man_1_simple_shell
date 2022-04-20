@@ -3,7 +3,7 @@ This is the manpage of the SeRiShell project in Holberton School
 .TH "SeRiShell" "21" April 2022" "0x16. C"
 
 .SH NAME
-.B SeRiShell - Standard input line for receiving instructions via commands 
+.B SeRiShell - Standard input line for receiving instructions via commands
 
 .SH SYNOPSIS
 .B [COMMAND] [FLAGS]
@@ -17,9 +17,9 @@ The \fBSeRiShell\fR program displays a prompt with standard input line for
 receiving instructions vía commands like the linux shell interpreter.
 For example, if a user enters ls then the shell executes the ls command.
 
-man ./man_1_simple_shell	Display this manual 
+man ./man_1_simple_shell	Display this manual
 
-    
+
 .SH OPTIONS
 Un listado de las posibles opciones y qué hace cada una.
 .SH EXAMPLES
@@ -77,7 +77,7 @@ get_build_in.c
 
 memory_allocation.c
 
-num_to_char.c    
+num_to_char.c
 
 .SH HISTORY
 Historial de cambios.

@@ -60,7 +60,7 @@ int ext(char *line, char **args, int *fail)
 	if (args[1])
 	{
 		status = _atoi(args[1]);
-		if (_isalpha(args[1]) == 1 && status >= 0 && status != INT_MAX)
+		if (_isalpha(args[1]) == 1 && status >= 0 && status <= INT_MAX)
 		{
 			free(line), free(args);
 			exit(status);
