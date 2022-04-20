@@ -8,8 +8,6 @@ This is the manpage of the SeRiShell project in Holberton School
 .SH SYNOPSIS
 .B [COMMAND] [FLAGS]
 
-.B #include \fB"shell.h"
-
 .SH DESCRIPTION
 .B \fBSeRiShell()\fR
 
