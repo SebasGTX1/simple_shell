@@ -24,11 +24,15 @@ int _process_launcher(char **args, int *fail)
 	{
 		do {
 			wait_pid = waitpid(pid, &status, WUNTRACED | WCONTINUED);
-			if (WIFEXITED(status) || wait_pid == -1)
+			if (wait_pid == -1)
 			{
-				*fail = 2;
+				exit(*fail);
 			}
 		} while (!WIFEXITED(status) && !WIFSIGNALED(status));
+		if (WIFEXITED(status))
+		{
+			*fail = WEXITSTATUS(status);
+		}
 	}
 	return (1);
 }
