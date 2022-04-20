@@ -3,19 +3,21 @@
  * _cd - funtion that recreates the cd build in
  * @line: input line
  * @args: the argument list
+ * @fail: fail status
  * Return: always 1
  */
-int _cd(char *line __attribute__((unused)), char **args)
+int _cd(char *line __attribute__((unused)), char **args, int *fail)
 {
 	int error_check, j = 0;
 	char **env = environ, *home, *new_PWD[4];
 	char error[] = "./hsh: 1: cd: can't cd to ", finish = '\n';
 
+	UNUSED(fail);
 	new_PWD[0] = "CD_CALL", new_PWD[1] = "PWD", new_PWD[3] = NULL;
 	if (!args[1])
 	{
 		home = _getenv("HOME"), chdir(home); /*set OLDPWD*/
-		new_PWD[2] = home, _setenv(line, new_PWD);
+		new_PWD[2] = home, _setenv(line, new_PWD, fail);
 		return (1);
 	}
 	if ((_strncmp("-", args[1], 1)) == 0)
@@ -26,7 +28,7 @@ int _cd(char *line __attribute__((unused)), char **args)
 			{
 				home = _strtok(env[j], "=");
 				home = _strtok(NULL, "="), chdir(home);
-				new_PWD[2] = home, _setenv(line, new_PWD);
+				new_PWD[2] = home, _setenv(line, new_PWD, fail);
 				return (1);
 			}
 		}
@@ -39,16 +41,17 @@ int _cd(char *line __attribute__((unused)), char **args)
 		write(1, args[1], _strlen(args[1])), write(STDOUT_FILENO, &finish, 1);
 	}
 	else
-		_setenv(line, new_PWD);
+		_setenv(line, new_PWD, fail);
 	return (1);
 }
 /**
  * ext - funtion that recreates the exit build in
  * @line: input line
  * @args: the argument list
+ * @fail: fail status
  * Return: always 0
  */
-int ext(char *line, char **args)
+int ext(char *line, char **args, int *fail)
 {
 	int status;
 
@@ -68,19 +71,22 @@ int ext(char *line, char **args)
 			return (1);
 		}
 	}
-		return (0);
-
+	free(line), free(args);
+	exit(*fail);
 }
 /**
  * _env - funtion that recreates the env build in
  * @l: input line
  * @args: the argument list
+ * @fail: fail status
  * Return: always 0
  */
-int _env(char *l __attribute__((unused)), char **args __attribute__((unused)))
+int _env(char *l, char **args __attribute__((unused)), int *fail)
 {
 	unsigned int i = 0, nbytes;
 
+	UNUSED(fail);
+	UNUSED(l);
 	for (; environ[i]; i++)
 	{
 		nbytes = _strlen(environ[i]);

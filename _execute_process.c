@@ -7,13 +7,14 @@
  * @args: the argument list
  * @exe: shell exe
  * @count: times that the shell prompt is printed
+ * @fail: fail status
  * Return: always 1 (exception: the excecution of the
  * exit build in)
  */
 
-int _execute(char *line, char **args, char *exe, int count)
+int _execute(char *line, char **args, char *exe, int count, int *fail)
 {
-	int (*func)(char *, char **);
+	int (*func)(char *, char **, int *);
 	struct stat sb;
 
 	if (!args[0])
@@ -23,7 +24,7 @@ int _execute(char *line, char **args, char *exe, int count)
 	func = get_build_in(args[0]);
 	if (!func)
 	{
-		if (search_no_build_in(args) == 1)
+		if (search_no_build_in(args, fail) == 1)
 		{
 			_process_launcher(args);
 			free(args[0]);
@@ -52,5 +53,5 @@ int _execute(char *line, char **args, char *exe, int count)
 			return (1);
 		}
 	}
-	return (func(line, args));
+	return (func(line, args, fail));
 }

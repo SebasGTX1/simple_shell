@@ -27,15 +27,17 @@ int add_env(char *new_env_var)
  * _setenv - funtion that recreates the setenv build in
  * @line: input line
  * @args: the argument list
+ * @fail: fail status
  * Return: always 1
  */
 
-int _setenv(char *line __attribute__((unused)), char **args)
+int _setenv(char *line __attribute__((unused)), char **args, int *fail)
 {
 	char **env = environ, *new_env_var, *update_env_var;
 	int i = 0, overwrite = 0, s_var_name, s_value, env_len;
 	char error[] = "Invalid input for setenv. For more info check: help setenv\n";
 
+	UNUSED(fail);
 	if (!args[1] || !args[2])
 	{
 		write(STDOUT_FILENO, error, _strlen(error));
@@ -76,15 +78,17 @@ int _setenv(char *line __attribute__((unused)), char **args)
  * _unsetenv - funtion that recreates the setenv build in
  * @line: input line
  * @args: the argument list
+ * @fail: fail status
  * Return: always 1
  */
 
-int _unsetenv(char *line __attribute__((unused)), char **args)
+int _unsetenv(char *line __attribute__((unused)), char **args, int *fail)
 {
 	char **env = environ;
 	int i = 0, size = 0;
 	char error[] = "Invalid input for unsetenv. Please check: help unsetenv\n";
 
+	UNUSED(fail);
 	if (!args[1])
 	{
 		write(STDOUT_FILENO, error, _strlen(error));

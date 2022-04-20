@@ -6,10 +6,11 @@
  * hlp - funtion that recreates the help build in
  * @l: input line
  * @args: the argument list
+ * @fail: fail status
  * Return: always 1
  */
 
-int hlp(char *l __attribute__((unused)), char **args __attribute__((unused)))
+int hlp(char *l, char **args __attribute__((unused)), int *fail)
 {
 	char *file_name, finish = '\n';
 	int fd, read_val, write_val, i = 0;
@@ -18,6 +19,7 @@ int hlp(char *l __attribute__((unused)), char **args __attribute__((unused)))
 	char *help_files[] = {"env_help", "help_help", "cd_help",
 		"setenv_help", "unsetenv_help", "exit_help", NULL};
 
+	UNUSED(fail), UNUSED(l);
 	for (; build_ins[i]; i++)
 	{
 		if (!args[1])
