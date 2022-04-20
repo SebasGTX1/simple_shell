@@ -23,16 +23,11 @@ Un listado de las posibles opciones y qué hace cada una.
 .SH EXAMPLES
 .brSeRiShell:/simple_shell$ ls	List directory contents
 .brSeRiShell:/simple_shell$ ls -a	List directory contents including hide files
-
-SeRiShell:/simple_shell$ ls -l	List directory contents using a long format
-
-SeRiShell:/simple_shell$ cd	Move the cursor at home directory
-
-SeRiShell:/simple_shell$ cd [Directory]	Move the cursor to a lower directory
-
-SeRiShell:/simple_shell$ cd ..	Move the cursor to the top directory
-
-SeRiShell:/simple_shell$ cd -	Move the cursor to the previous directory
+.brSeRiShell:/simple_shell$ ls -l	List directory contents using a long format
+.brSeRiShell:/simple_shell$ cd	Move the cursor at home directory
+.brSeRiShell:/simple_shell$ cd [Directory]	Move the cursor to a lower directory
+.brSeRiShell:/simple_shell$ cd ..	Move the cursor to the top directory
+.brSeRiShell:/simple_shell$ cd -	Move the cursor to the previous directory
 
 .SH EXIT VALUES
 Posibles códigos de retorno y su significado.
