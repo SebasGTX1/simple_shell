@@ -3,10 +3,11 @@
  * search_no_build_in - funtions that search if the argument is
  * a not build in funtion
  * @args: the argument list
+ * @fail: fail status
  * Return: 1 if the funtion finds the command or 0 if fails
  */
 
-int search_no_build_in(char **args)
+int search_no_build_in(char **args, int *fail)
 {
 	char *copy, *token;
 	char *command = calloc(_strlen(args[0]) + 3, 1);
@@ -40,5 +41,6 @@ int search_no_build_in(char **args)
 	}
 	free(command);
 	free(copy);
-	return (0);
+	*fail = 127;
+	return (127);
 }

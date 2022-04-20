@@ -1,0 +1,14 @@
+help: help BUILDIN
+    Display information about builtin commands.
+
+    Displays brief summaries of builtin commands.  If BUILDIN is
+    specified, gives detailed help on all commands matching BUILDIN,
+    otherwise the list of help topics is printed.
+
+    Options:
+     none
+    Arguments:
+      BUILDIN command page to be display
+
+    Exit Status:
+    Always Return 1

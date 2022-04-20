@@ -1,0 +1,11 @@
+exit: exit STATUS
+    exits the shell
+
+    Options:
+    none
+
+    Arguments:
+    STATUS is the exit status
+
+    Exit status:
+    the exit status is give it by the user. The default status is EXIT_SUCCESS

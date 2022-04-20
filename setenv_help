@@ -1,0 +1,11 @@
+setenv: setenv VARIABLE VALUE
+    sets a new enviroment variable or update an existing one
+
+    Options:
+    none
+
+    Arguments:
+    VARIABLE is the variable to be set and VALUE is the setting value for the VARIABLE
+
+    Exit status:
+    always returns 1

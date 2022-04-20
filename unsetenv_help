@@ -1,0 +1,11 @@
+unsetenv: unsetenv VARIABLE
+    unsets an enviroment variable
+
+    Options:
+    none
+
+    Arguments:
+    VARIABLE is the variable to be unset
+
+    Exit status:
+    always returns 1

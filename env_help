@@ -1,0 +1,12 @@
+env: env
+
+    Display a list of the environment variables
+
+    Options:
+    none
+
+    Arguments:
+    none
+
+    Exit Status:
+    Always return 1

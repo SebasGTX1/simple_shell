@@ -3,28 +3,22 @@
  * _cd - funtion that recreates the cd build in
  * @line: input line
  * @args: the argument list
+ * @fail: fail status
  * Return: always 1
  */
-
-int _cd(char *line __attribute__((unused)), char **args)
+int _cd(char *line __attribute__((unused)), char **args, int *fail)
 {
 	int error_check, j = 0;
 	char **env = environ, *home, *new_PWD[4];
+	char error[] = "./hsh: 1: cd: can't cd to ", finish = '\n';
 
+	UNUSED(fail);
 	new_PWD[0] = "CD_CALL", new_PWD[1] = "PWD", new_PWD[3] = NULL;
 	if (!args[1])
 	{
-		for (; env[j]; j++)
-		{
-			if ((_strncmp("HOME", env[j], 4)) == 0)
-			{
-				home = _strtok(env[j], "=");
-				home = _strtok(NULL, "=");
-				chdir(home); /*set OLDPWD*/
-				new_PWD[2] = home, _setenv(line, new_PWD);
-				return (1);
-			}
-		}
+		home = _getenv("HOME"), chdir(home); /*set OLDPWD*/
+		new_PWD[2] = home, _setenv(line, new_PWD, fail);
+		return (1);
 	}
 	if ((_strncmp("-", args[1], 1)) == 0)
 	{
@@ -33,9 +27,8 @@ int _cd(char *line __attribute__((unused)), char **args)
 			if ((_strncmp("OLDPWD", env[j], 6)) == 0)
 			{
 				home = _strtok(env[j], "=");
-				home = _strtok(NULL, "=");
-				chdir(home);
-				new_PWD[2] = home, _setenv(line, new_PWD);
+				home = _strtok(NULL, "="), chdir(home);
+				new_PWD[2] = home, _setenv(line, new_PWD, fail);
 				return (1);
 			}
 		}
@@ -43,62 +36,62 @@ int _cd(char *line __attribute__((unused)), char **args)
 	chdir(args[1]);
 	new_PWD[2] = args[1], error_check = chdir(args[1]);
 	if (error_check != 0)
-		perror(args[1]);
+	{
+		write(STDOUT_FILENO, error, _strlen(error));
+		write(1, args[1], _strlen(args[1])), write(STDOUT_FILENO, &finish, 1);
+	}
 	else
-		_setenv(line, new_PWD);
+		_setenv(line, new_PWD, fail);
 	return (1);
 }
-/**
- * hlp - funtion that recreates the help build in
- * @l: input line
- * @args: the argument list
- * Return: always 1
- */
-
-int hlp(char *l __attribute__((unused)), char **args __attribute__((unused)))
-{
-	int i = 0;
-	char *builtin_str[] = {"cd", "help", "exit"};
-
-	for (; i < 3; i++)
-		printf("  %s\n", builtin_str[i]);
-	return (1);
-}
-
 /**
  * ext - funtion that recreates the exit build in
  * @line: input line
  * @args: the argument list
+ * @fail: fail status
  * Return: always 0
  */
-int ext(char *line, char **args)
+int ext(char *line, char **args, int *fail)
 {
 	int status;
 
 	if (args[1])
 	{
-		status = atoi(args[1]); /* make the atoi fun*/
-		free(line), free(args);
-		exit(status);
-	}
-		return (0);
+		char error[] = "Invalid exit status\n";
 
+		if (_isalpha(args[1]) == 1)
+		{
+			status = _atoi(args[1]);
+			free(line), free(args);
+			exit(status);
+		}
+		else
+		{
+			write(STDOUT_FILENO, error, _strlen(error));
+			return (1);
+		}
+	}
+	free(line), free(args);
+	exit(*fail);
 }
 /**
  * _env - funtion that recreates the env build in
  * @l: input line
  * @args: the argument list
+ * @fail: fail status
  * Return: always 0
  */
-int _env(char *l __attribute__((unused)), char **args __attribute__((unused)))
+int _env(char *l, char **args __attribute__((unused)), int *fail)
 {
 	unsigned int i = 0, nbytes;
 
+	UNUSED(l);
 	for (; environ[i]; i++)
 	{
 		nbytes = _strlen(environ[i]);
 		write(STDOUT_FILENO, environ[i], nbytes);
 		write(STDOUT_FILENO, "\n", 1);
 	}
+	*fail = 0;
 	return (1);
 }

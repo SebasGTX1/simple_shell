@@ -8,7 +8,7 @@ void shell_start(char *exe)
 {
 	char *line = NULL, **args = NULL, *prompt = NULL, *dir = NULL;
 	char *dircolor = NULL;
-	int status = 1, tty = 1, count = 1, dir_size;
+	int status = 1, tty = 1, count = 1, dir_size, fail = 0;
 
 	isatty(STDIN_FILENO) == 0 ? tty = 0 : tty;
 	while (status)
@@ -28,9 +28,9 @@ void shell_start(char *exe)
 		free(dircolor);
 		free(dir);
 		fflush(stdin);
-		line = read_input();
+		line = read_input(&fail);
 		args = av_line_saver(line);
-		status = _execute(line, args, exe, count);
+		status = _execute(line, args, exe, count, &fail);
 		count += 1;
 		free(line);
 		free(args);
