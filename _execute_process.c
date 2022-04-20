@@ -20,13 +20,13 @@ int _execute(char *line, char **args, char *exe, int count, int *fail)
 	if (!args[0])
 		return (1);
 	if (stat(args[0], &sb) != -1)
-		return (_process_launcher(args));
+		return (_process_launcher(args, fail));
 	func = get_build_in(args[0]);
 	if (!func)
 	{
 		if (search_no_build_in(args, fail) == 1)
 		{
-			_process_launcher(args);
+			_process_launcher(args, fail);
 			free(args[0]);
 			return (1);
 		}
