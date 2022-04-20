@@ -45,10 +45,8 @@ Relative commands and functions
 Lista de bugs que han presentado versiones anteriores.
 .SH FILES
 Files included are:
-
-shell_start.c
-
-shell.h
+.LPshell_start.c
+.LPshell.h
 
 _execute_process.c
 
