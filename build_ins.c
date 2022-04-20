@@ -68,7 +68,8 @@ int ext(char *line, char **args)
 			return (1);
 		}
 	}
-		return (0);
+	free(line), free(args);
+	exit(127);
 
 }
 /**
