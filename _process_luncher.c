@@ -14,8 +14,7 @@ int _process_launcher(char **args, int *fail)
 	pid = fork();
 	if (pid == 0)
 	{
-		if (execve(args[0], args, NULL) == -1)
-			*fail = 2;
+		execve(args[0], args, NULL);
 	}
 	else if (pid < 0)
 	{
