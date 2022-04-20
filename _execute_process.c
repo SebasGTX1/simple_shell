@@ -23,7 +23,7 @@ int _execute(char *line, char **args, char *exe, int count)
 	func = get_build_in(args[0]);
 	if (!func)
 	{
-		if (search_no_build_in(args))
+		if (search_no_build_in(args) == 1)
 		{
 			_process_launcher(args);
 			free(args[0]);
