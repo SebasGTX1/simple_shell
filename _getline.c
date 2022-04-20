@@ -4,7 +4,7 @@
  *
  * Return: readed buffer
  */
-char *_getline(void)
+char *_getline()
 {
 	int ctr = 0, i = 0, r = 0, buffsize = BUFSIZE;
 	char *buff = _calloc(buffsize, 1);

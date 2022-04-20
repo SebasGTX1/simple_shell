@@ -28,7 +28,7 @@ void shell_start(char *exe)
 		free(dircolor);
 		free(dir);
 		fflush(stdin);
-		line = read_input();
+		line = read_input(&fail);
 		args = av_line_saver(line);
 		status = _execute(line, args, exe, count, &fail);
 		count += 1;
