@@ -1,7 +1,6 @@
 .TL
 This is the manpage of the SeRiShell project in Holberton School
-
-.TH SeRiShell "21 April 2022" "0x16. C" "-Simple Shell"
+.TH "SeRiShell" "21" April 2022" "0x16. C"
 
 .SH NAME
 .B SeRiShell - Standard input line for receiving instructions via commands 
@@ -24,9 +23,8 @@ man ./man_1_simple_shell	Display this manual
 .SH OPTIONS
 Un listado de las posibles opciones y qué hace cada una.
 .SH EXAMPLES
-SeRiShell:/simple_shell$ ls	List directory contents
-
-SeRiShell:/simple_shell$ ls -a	List directory contents including hide files
+.brSeRiShell:/simple_shell$ ls	List directory contents
+.brSeRiShell:/simple_shell$ ls -a	List directory contents including hide files
 
 SeRiShell:/simple_shell$ ls -l	List directory contents using a long format
 
