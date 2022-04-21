@@ -71,7 +71,7 @@ int ext(char *line, char **args, int *fail)
 			write(STDOUT_FILENO, error, _strlen(error));
 			write(STDOUT_FILENO, args[1], _strlen(args[1]));
 			write(STDOUT_FILENO, &finish, 1);
-			return (1);
+			return (2);
 		}
 	}
 	free(line), free(args);
