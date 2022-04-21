@@ -7,6 +7,7 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 #include <sys/stat.h>
+#include <string.h>
 #define BUFSIZE 5024
 #define DELIMITERS " =:;\t\"\r\n+"
 #define UNUSED(x) (void)(x)

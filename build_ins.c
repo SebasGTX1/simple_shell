@@ -27,8 +27,8 @@ int _cd(char *line __attribute__((unused)), char **args, int *fail)
 		{
 			if ((_strncmp("OLDPWD", env[j], 6)) == 0)
 			{
-				home = _strtok(env[j], "=");
-				home = _strtok(NULL, "="), chdir(home);
+				home = strtok(env[j], "=");
+				home = strtok(NULL, "="), chdir(home);
 				new_PWD[2] = home, _setenv(line, new_PWD, fail);
 				return (1);
 			}

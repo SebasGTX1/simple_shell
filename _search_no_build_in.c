@@ -26,10 +26,10 @@ int search_no_build_in(char **args, int *fail)
 	_strcpy(copy, path);
 	_strcat(command, "/");
 	_strcat(command, args[0]);
-	token = _strtok(copy, DELIMITERS);
+	token = strtok(copy, DELIMITERS);
 	command_size = _strlen(command) + 1;
 
-	while ((token = _strtok(NULL, DELIMITERS)))
+	while ((token = strtok(NULL, DELIMITERS)))
 	{
 		dest = calloc(_strlen(token) + 1 + command_size, 1);
 		_strcat(dest, token);
