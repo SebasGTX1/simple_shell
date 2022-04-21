@@ -43,7 +43,7 @@ Full documentation at: <https://github.com/SebasGTX1/simple_shell>
 Relative commands and functions
 .SH BUGS
 Lista de bugs que han presentado versiones anteriores.
-.SH FILES...
+.SH FILES
 Files included are:
 
 shell_start.c
@@ -78,7 +78,7 @@ memory_allocation.c
 
 num_to_char.c
 
-.SH HISTORY
+.SH HISTORY...
 Historial de cambios.
 
 .SH AUTHORS
