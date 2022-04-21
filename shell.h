@@ -13,7 +13,6 @@
 #define UNUSED(x) (void)(x)
 
 extern char **environ;
-/*static char **last_environ;*/
 /**
  * struct build_in - Struct of pointers to funtions
  * @build_in: build_in identifier
