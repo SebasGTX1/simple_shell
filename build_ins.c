@@ -13,7 +13,7 @@ int _cd(char *line __attribute__((unused)), char **args, int *fail)
 	char *home, *new_PWD[4];
 
 	UNUSED(fail);
-	new_PWD[0] = "CD_CALL", new_PWD[3] = NULL;
+	new_PWD[0] = "CD_CALL", new_PWD[1] = "PWD", new_PWD[3] = NULL;
 	if (!args[1])
 	{
 		home = _getenv("HOME");
