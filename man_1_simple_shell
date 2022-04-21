@@ -19,7 +19,7 @@ man ./man_1_simple_shell	Display this manual
 
 
 .SH OPTIONS
-Un listado de las posibles opciones y qué hace cada una.
+Options that are part of the SeRiShell.
 .SH EXAMPLES
 SeRiShell:/simple_shell$ ls	List directory contents
 
