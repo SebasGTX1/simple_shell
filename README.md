@@ -7,13 +7,16 @@ SeRiShell(C17 0x16. C)                                            SeRiShell(C17 
 
 This is the manpage of the SeRiShell project in Holberton School
 
-###NAME
+NAME
+
        SeRiShell - Standard input line for receiving instructions via commands
 
-###SYNOPSIS
+SYNOPSIS
+
        [COMMAND] [FLAGS]
 
-###DESCRIPTION
+DESCRIPTION
+
        SeRiShell()
 
        The  SeRiShell  program  displays a prompt with standard input line for receiving
@@ -22,15 +25,19 @@ This is the manpage of the SeRiShell project in Holberton School
 
        man ./man_1_simple_shell Display this manual
 
-###OPTIONS
-       Un listado de las posibles opciones y qué hace cada una.
+OPTIONS
 
-###EXAMPLES
+       The ls command can be used with the following flags:
+
+       -a   List directory contents including hide files
+
+       -l   List directory contents using a long format
+
+EXAMPLES
+
+       SeRiShell:/simple_shell$ pwd    Shows current directory
+
        SeRiShell:/simple_shell$ ls   List directory contents
-
-       SeRiShell:/simple_shell$ ls -a     List directory contents including hide files
-
-       SeRiShell:/simple_shell$ ls -l     List directory contents using a long format
 
        SeRiShell:/simple_shell$ cd   Move the cursor at home directory
 
@@ -40,17 +47,22 @@ This is the manpage of the SeRiShell project in Holberton School
 
        SeRiShell:/simple_shell$ cd - Move the cursor to the previous directory
 
-###EXIT VALUES
-       Posibles códigos de retorno y su significado.
+EXIT VALUES ...
 
-###SEE ALSO
+       This is the list of output values and their meaning.
+
+SEE ALSO
+
        Full documentation at: <https://github.com/SebasGTX1/simple_shell>
 
        Relative commands and functions
-###BUGS
-       Lista de bugs que han presentado versiones anteriores.
 
-###FILES
+BUGS
+
+       Here is a small list of bugs that were fixed.
+
+FILES
+
        Files included are:
 
        shell_start.c
@@ -85,14 +97,16 @@ This is the manpage of the SeRiShell project in Holberton School
 
        num_to_char.c
 
-###HISTORY
-       Historial de cambios.
+HISTORY
 
-###AUTHORS
+       Since the alpha version no new versions have been made.
+
+AUTHORS
+
        Written by Sebastián García & Ricardo Montaña.
 
        21 April 2022
 
-###COPYRIGHT
-	© All rights reserved.
+COPYRIGHT
 
+       © All rights reserved
