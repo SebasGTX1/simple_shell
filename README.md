@@ -32,6 +32,11 @@ DESCRIPTION
 
        man ./man_1_simple_shell Display this manual
 
+WORK FLOW
+
+	<img src="https://www.bodegalibre.com/storage/flowchart_simple_shell.jpg">
+
+
 OPTIONS
 
        The ls command can be used with the following flags:
