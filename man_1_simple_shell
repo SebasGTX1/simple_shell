@@ -31,10 +31,6 @@ SeRiShell:/simple_shell$ pwd    Shows current directory
 
 SeRiShell:/simple_shell$ ls	List directory contents
 
-SeRiShell:/simple_shell$ ls -a	List directory contents including hide files
-
-SeRiShell:/simple_shell$ ls -l	List directory contents using a long format
-
 SeRiShell:/simple_shell$ cd	Move the cursor at home directory
 
 SeRiShell:/simple_shell$ cd [Directory]	Move the cursor to a lower directory
