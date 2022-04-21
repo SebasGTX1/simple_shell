@@ -68,9 +68,9 @@ int ext(char *line, char **args, int *fail)
 		else
 		{
 			*fail = 2;
-			write(STDOUT_FILENO, error, _strlen(error));
-			write(STDOUT_FILENO, args[1], _strlen(args[1]));
-			write(STDOUT_FILENO, &finish, 1);
+			write(STDERR_FILENO, error, _strlen(error));
+			write(STDERR_FILENO, args[1], _strlen(args[1]));
+			write(STDERR_FILENO, &finish, 1);
 			return (2);
 		}
 	}
