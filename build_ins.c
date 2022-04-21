@@ -20,11 +20,8 @@ int _cd(char *line __attribute__((unused)), char **args, int *fail)
 		if (home)
 		{
 			chdir(home);
-			new_PWD[1] = "OLDPWD";
-			new_PWD[2] = _getenv("PWD"), _setenv(line, new_PWD, fail);
+			new_PWD[2] = home, _setenv(line, new_PWD, fail);
 		}
-		new_PWD[1] = "PWD";
-		new_PWD[2] = home, _setenv(line, new_PWD, fail);
 		return (1);
 	}
 	if ((_strncmp("-", args[1], 1)) == 0)
@@ -33,11 +30,8 @@ int _cd(char *line __attribute__((unused)), char **args, int *fail)
 		if (home)
 		{
 			chdir(home);
-			new_PWD[1] = "OLDPWD";
-			new_PWD[2] = _getenv("PWD"), _setenv(line, new_PWD, fail);
+			new_PWD[2] = home, _setenv(line, new_PWD, fail);
 		}
-		new_PWD[1] = "PWD";
-		new_PWD[2] = home, _setenv(line, new_PWD, fail);
 		return (1);
 	}
 	chdir(args[1]);
