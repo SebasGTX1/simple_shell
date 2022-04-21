@@ -15,7 +15,7 @@ int search_no_build_in(char **args, int *fail)
 	size_t command_size;
 	struct stat sb;
 
-	path = _getenv("PATH=");
+	path = _getenv("PATH");
 	copy = malloc(_strlen(path) + 1);
 	_strcpy(copy, path);
 	_strcat(command, "/");
