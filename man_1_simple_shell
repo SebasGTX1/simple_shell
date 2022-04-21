@@ -41,9 +41,9 @@ Posibles códigos de retorno y su significado.
 Full documentation at: <https://github.com/SebasGTX1/simple_shell>
 
 Relative commands and functions
-.SH BUGS ...
+.SH BUGS
 Lista de bugs que han presentado versiones anteriores.
-.SH FILES
+.SH FILES...
 Files included are:
 
 shell_start.c
