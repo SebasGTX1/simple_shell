@@ -35,12 +35,10 @@ int _setenv(char *line __attribute__((unused)), char **args, int *fail)
 {
 	char **env = environ, *new_env_var, *update_env_var;
 	int i = 0, overwrite = 0, s_var_name, s_value, env_len;
-	char error[] = "Invalid input for setenv. For more info check: help setenv\n";
 
 	UNUSED(fail);
 	if (!args[1] || !args[2])
 	{
-		write(STDOUT_FILENO, error, _strlen(error));
 		return (1);
 	}
 	s_var_name = _strlen(args[1]), s_value = _strlen(args[2]) + 1;
