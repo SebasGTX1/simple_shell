@@ -36,7 +36,7 @@ SeRiShell:/simple_shell$ cd ..	Move the cursor to the top directory
 SeRiShell:/simple_shell$ cd -	Move the cursor to the previous directory
 
 .SH EXIT VALUES
-Posibles códigos de retorno y su significado.
+This is the list of output values and their meaning.
 .SH SEE ALSO
 Full documentation at: <https://github.com/SebasGTX1/simple_shell>
 
