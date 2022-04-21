@@ -9,7 +9,7 @@
 #include <sys/stat.h>
 #include <string.h>
 #define BUFSIZE 5024
-#define DELIMITERS " =:;\t\"\r\n+"
+#define DELIMITERS " =:;\'\t\"\r\n+"
 #define UNUSED(x) (void)(x)
 
 extern char **environ;
@@ -29,8 +29,6 @@ int _isalpha(char *s);
 int _atoi(char *s);
 char *_getenv(const char *name);
 char *read_input(int *fail);
-char *_getline();
-char *_strtok(char *str, char *d);
 void shell_start(char *exe);
 char **av_line_saver(char *line);
 int _process_launcher(char **args, int *fail);
