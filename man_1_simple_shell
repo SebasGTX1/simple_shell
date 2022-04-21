@@ -78,10 +78,10 @@ memory_allocation.c
 
 num_to_char.c
 
-.SH HISTORY...
+.SH HISTORY
 Historial de cambios.
 
-.SH AUTHORS
+.SH AUTHORS...
 Written by Sebastián García & Ricardo Montaña.
 
 21 April 2022
