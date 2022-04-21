@@ -10,7 +10,7 @@
 int _cd(char *line __attribute__((unused)), char **args, int *fail)
 {
 	int error_check;
-	char *home, *new_PWD[4];
+	char *home, *new_PWD[4], end = '\n';
 
 	UNUSED(fail);
 	new_PWD[0] = "CD_CALL", new_PWD[1] = "PWD", new_PWD[3] = NULL;
@@ -32,6 +32,8 @@ int _cd(char *line __attribute__((unused)), char **args, int *fail)
 			chdir(home);
 			new_PWD[2] = home, _setenv(line, new_PWD, fail);
 		}
+		write(STDOUT_FILENO, home, _strlen(home));
+		write(STDOUT_FILENO, &end, 1);
 		return (1);
 	}
 	chdir(args[1]);
