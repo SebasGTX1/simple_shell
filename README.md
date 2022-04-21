@@ -32,6 +32,12 @@ DESCRIPTION
 
        man ./man_1_simple_shell Display this manual
 
+INSTALATION
+   - Clone the repository.
+   - Compile: `gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
+   - Run the shell in interactive mode: `./hsh`
+   - Run the shell in non-interactive mode: Example `echo "ls" | ./hsh`
+
 WORK FLOW
 
 ![Image text](https://www.bodegalibre.com/storage/flowchart_simple_shell.jpg)
