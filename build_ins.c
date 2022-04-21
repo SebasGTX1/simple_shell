@@ -16,8 +16,12 @@ int _cd(char *line __attribute__((unused)), char **args, int *fail)
 	new_PWD[0] = "CD_CALL", new_PWD[1] = "PWD", new_PWD[3] = NULL;
 	if (!args[1])
 	{
-		chdir(_getenv("HOME")); /*set OLDPWD*/
-		new_PWD[2] = _getenv("HOME"), _setenv(line, new_PWD, fail);
+		home = _getenv("HOME")
+		if (home)
+		{
+			chdir(home);
+		} /*set OLDPWD*/
+		new_PWD[2] = home, _setenv(line, new_PWD, fail);
 		return (1);
 	}
 	if ((_strncmp("-", args[1], 1)) == 0)
