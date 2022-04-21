@@ -23,7 +23,7 @@ int _isalpha(char *s)
 int _atoi(char *s)
 {
 
-	int count = 0, t = 0, i = 0, sig = 1, m = 1, intt = 0;
+	unsigned int count = 0, t = 0, i = 0, sig = 1, m = 1, intt = 0;
 
 	while (*(s + count) != '\0')
 	{
