@@ -36,7 +36,7 @@ int _cd(char *line __attribute__((unused)), char **args, int *fail)
 	error_check = chdir(args[1]);
 	if (error_check == -1)
 	{
-		perror("hsh");
+		/*perror("hsh");*/
 		return (1);
 	}
 	else
