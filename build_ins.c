@@ -9,8 +9,8 @@
  */
 int _cd(char *line __attribute__((unused)), char **args, int *fail)
 {
-	int error_check, j = 0;
-	char **env = environ, *home, *new_PWD[4];
+	int error_check;
+	char *home, *new_PWD[4];
 
 	UNUSED(fail);
 	new_PWD[0] = "CD_CALL", new_PWD[1] = "PWD", new_PWD[3] = NULL;
@@ -26,16 +26,13 @@ int _cd(char *line __attribute__((unused)), char **args, int *fail)
 	}
 	if ((_strncmp("-", args[1], 1)) == 0)
 	{
-		for (; env[j]; j++)
+		home = _getenv("OLDPWD");
+		if (home)
 		{
-			if ((_strncmp("OLDPWD", env[j], 6)) == 0)
-			{
-				home = strtok(env[j], "=");
-				home = strtok(NULL, "="), chdir(home);
-				new_PWD[2] = home, _setenv(line, new_PWD, fail);
-				return (1);
-			}
+			chdir(home);
 		}
+		new_PWD[2] = home, _setenv(line, new_PWD, fail);
+		return (1);
 	}
 	chdir(args[1]);
 	new_PWD[2] = args[1], error_check = chdir(args[1]);
