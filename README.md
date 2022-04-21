@@ -1,9 +1,7 @@
 # simple_shell
 In this repo, Ricardo Montaña and me created our own Shell!! Yeahh!!
 
-## SeRiShell
-
-SeRiShell(C17 0x16. C)                                            SeRiShell(C17 0x16. C)
+## SeRiShell C17 0x16.C
 
 This is the manpage of the SeRiShell project in Holberton School
 
