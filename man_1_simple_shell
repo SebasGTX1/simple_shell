@@ -21,6 +21,8 @@ man ./man_1_simple_shell	Display this manual
 .SH OPTIONS ...
 Options that are part of the SeRiShell.
 .SH EXAMPLES
+SeRiShell:/simple_shell$ pwd    Shows current directory
+
 SeRiShell:/simple_shell$ ls	List directory contents
 
 SeRiShell:/simple_shell$ ls -a	List directory contents including hide files
