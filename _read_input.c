@@ -9,13 +9,17 @@ char *read_input(int *fail)
 {
 	char *line = NULL, finish = '\n';
 	int tty = 1;
+	size_t n = 0;
 
 	isatty(STDIN_FILENO) == 0 ? tty = 0 : tty;
-	line = _getline(fail);
-	if (!line)
+	if (getline(&line, &n, stdin) == -1)
 	{
-		tty == 1 ? write(STDOUT_FILENO, &finish, 1) : tty;
-		exit(*fail);
+		free(line);
+		if (feof(stdin))
+		{
+			tty == 1 ? write(STDOUT_FILENO, &finish, 1) : tty;
+			exit(*fail);
+		}
 	}
 	return (line);
 }
