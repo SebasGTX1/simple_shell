@@ -1,6 +1,6 @@
 .TL
 This is the manpage of the SeRiShell project in Holberton School
-.TH "SeRiShell" "C17 0x16. C"
+.TH "SeRiShell" "C-17 0x16. C"
 
 .SH NAME
 .B SeRiShell - Standard input line for receiving instructions via commands 
