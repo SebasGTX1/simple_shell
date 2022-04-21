@@ -13,5 +13,5 @@ File description
 List of allowed functions and system calls for this project
 USAGE
 Example of Usage
-Bugs
+
 TEAM
