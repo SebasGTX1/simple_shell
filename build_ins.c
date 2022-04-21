@@ -16,7 +16,7 @@ int _cd(char *line __attribute__((unused)), char **args, int *fail)
 	new_PWD[0] = "CD_CALL", new_PWD[1] = "PWD", new_PWD[3] = NULL;
 	if (!args[1])
 	{
-		home = _getenv("HOME")
+		home = _getenv("HOME");
 		if (home)
 		{
 			chdir(home);
