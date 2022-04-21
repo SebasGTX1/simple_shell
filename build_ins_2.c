@@ -13,14 +13,11 @@ int add_env(char *new_env_var)
 
 	for (; environ[i]; i++)
 		;
-	new_env = malloc((i + 1) * sizeof(char *));
-	free(new_env);
 	new_env = env;
 	new_env[i] = malloc(_strlen(new_env_var) + 1);
 	_strcpy(new_env[i], new_env_var);
 	environ = new_env;
 	environ[i + 1] = NULL;
-	free(new_env[i]);
 	free(new_env_var);
 	return (1);
 }
