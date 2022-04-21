@@ -11,7 +11,6 @@ int _cd(char *line __attribute__((unused)), char **args, int *fail)
 {
 	int error_check, j = 0;
 	char **env = environ, *home, *new_PWD[4];
-	char error[] = "./hsh: 1: cd: can't cd to ", finish = '\n';
 
 	UNUSED(fail);
 	new_PWD[0] = "CD_CALL", new_PWD[1] = "PWD", new_PWD[3] = NULL;
@@ -38,8 +37,7 @@ int _cd(char *line __attribute__((unused)), char **args, int *fail)
 	new_PWD[2] = args[1], error_check = chdir(args[1]);
 	if (error_check != 0)
 	{
-		write(STDOUT_FILENO, error, _strlen(error));
-		write(1, args[1], _strlen(args[1])), write(STDOUT_FILENO, &finish, 1);
+		return (1);
 	}
 	else
 		_setenv(line, new_PWD, fail);
