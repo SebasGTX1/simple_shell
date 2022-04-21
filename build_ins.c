@@ -96,5 +96,7 @@ int _env(char *l, char **args __attribute__((unused)), int *fail)
 		write(STDOUT_FILENO, "\n", 1);
 	}
 	*fail = 0;
+	if (i == 10)
+		free(environ[i - 1]);
 	return (1);
 }
