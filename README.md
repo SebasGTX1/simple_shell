@@ -13,7 +13,16 @@ SYNOPSIS
 
        [COMMAND] [FLAGS]
 
+ABOUT SERISHELL PROJECT
+
+       The SeRiShell project is just a small version of the linux shell.
+       This project was developed in the C programming language, through
+       which many functionalities that a real shell does can be executed.
+
 DESCRIPTION
+
+       The shell is a program that receives instructions from the keyboard
+       through the terminal and passes them to the operating system for execution.	
 
        SeRiShell()
 
