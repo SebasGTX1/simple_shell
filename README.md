@@ -1,49 +1,7 @@
 # simple_shell
 In this repo, Ricardo Montaña and me created our own Shell!! Yeahh!!
 
-### Features
-
-**Table of Contents**
-
-Table of contents
-What is the shell?
-About this project
-Essential Functionalities of the Simple Shell
-File description
-List of allowed functions and system calls for this project
-USAGE
-Example of Usage
--*/-*/-*/-*/-*/-*/-*/-*/-*/-*/-*/-/-
-
-
-<link rel="stylesheet" href="editormd/css/editormd.css" />
-<div id="test-editor">
-    <textarea style="display:none;">### Editor.md
-
-**Editor.md**: The open source embeddable online markdown editor, based on CodeMirror & jQuery & Marked.
-    </textarea>
-</div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="editormd/editormd.min.js"></script>
-<script type="text/javascript">
-    $(function() {
-        var editor = editormd("test-editor", {
-            // width  : "100%",
-            // height : "100%",
-            path   : "editormd/lib/"
-        });
-    });
-</script>
-
-
-
--*/-*/-*/-*/-*/-*/-*/-/-/-/-/-*/-*/-*/
-
-TEAM
-
-
-
-
+## SeRiShell
 
 SeRiShell(C17 0x16. C)                                            SeRiShell(C17 0x16. C)
 
@@ -137,12 +95,4 @@ AUTHORS
 
 COPYRIGHT
        Especificar la información del copyright.
-
-
-
-
-
-
-
-
 
