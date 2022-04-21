@@ -84,12 +84,10 @@ int _unsetenv(char *line __attribute__((unused)), char **args, int *fail)
 {
 	char **env = environ;
 	int i = 0, size = 0;
-	char error[] = "Invalid input for unsetenv. Please check: help unsetenv\n";
 
 	UNUSED(fail);
 	if (!args[1])
 	{
-		write(STDOUT_FILENO, error, _strlen(error));
 		return (1);
 	}
 	for (; env[size]; size++)
