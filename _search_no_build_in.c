@@ -16,7 +16,7 @@ int search_no_build_in(char **args, int *fail)
 	struct stat sb;
 
 	path = _getenv("PATH=");
-	if(!path)
+	if (!path)
 	{
 		free(command);
 		*fail = 127;

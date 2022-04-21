@@ -29,8 +29,6 @@ char *_getline()
 			buff[i] = '\0';
 			return (buff);
 		}
-		/*else if (ctr == '\t')
-			continue;*/
 		else
 			buff[i] = ctr;
 		i++;

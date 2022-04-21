@@ -22,7 +22,7 @@ ABOUT SERISHELL PROJECT
 DESCRIPTION
 
        The shell is a program that receives instructions from the keyboard
-       through the terminal and passes them to the operating system for execution.	
+       through the terminal and passes them to the operating system for execution.
 
        SeRiShell()
 
