@@ -34,6 +34,7 @@ void shell_start(char *exe)
 		count += 1;
 		free(line);
 		free(args);
+		line = NULL;
 	}
 }
 /**

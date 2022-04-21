@@ -15,15 +15,21 @@ int search_no_build_in(char **args, int *fail)
 	size_t command_size;
 	struct stat sb;
 
-	path = _getenv("PATH");
+	path = _getenv("PATH=");
+	if (!path)
+	{
+		free(command);
+		*fail = 127;
+		return (0);
+	}
 	copy = malloc(_strlen(path) + 1);
 	_strcpy(copy, path);
 	_strcat(command, "/");
 	_strcat(command, args[0]);
-	token = _strtok(copy, DELIMITERS);
+	token = strtok(copy, DELIMITERS);
 	command_size = _strlen(command) + 1;
 
-	while ((token = _strtok(NULL, DELIMITERS)))
+	while ((token = strtok(NULL, DELIMITERS)))
 	{
 		dest = calloc(_strlen(token) + 1 + command_size, 1);
 		_strcat(dest, token);
@@ -42,5 +48,5 @@ int search_no_build_in(char **args, int *fail)
 	free(command);
 	free(copy);
 	*fail = 127;
-	return (127);
+	return (0);
 }

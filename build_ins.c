@@ -9,37 +9,36 @@
  */
 int _cd(char *line __attribute__((unused)), char **args, int *fail)
 {
-	int error_check, j = 0;
-	char **env = environ, *home, *new_PWD[4];
-	char error[] = "./hsh: 1: cd: can't cd to ", finish = '\n';
+	int error_check;
+	char *home, *new_PWD[4];
 
 	UNUSED(fail);
 	new_PWD[0] = "CD_CALL", new_PWD[1] = "PWD", new_PWD[3] = NULL;
 	if (!args[1])
 	{
-		home = _getenv("HOME"), chdir(home); /*set OLDPWD*/
+		home = _getenv("HOME");
+		if (home)
+		{
+			chdir(home);
+		} /*set OLDPWD*/
 		new_PWD[2] = home, _setenv(line, new_PWD, fail);
 		return (1);
 	}
 	if ((_strncmp("-", args[1], 1)) == 0)
 	{
-		for (; env[j]; j++)
+		home = _getenv("OLDPWD");
+		if (home)
 		{
-			if ((_strncmp("OLDPWD", env[j], 6)) == 0)
-			{
-				home = _strtok(env[j], "=");
-				home = _strtok(NULL, "="), chdir(home);
-				new_PWD[2] = home, _setenv(line, new_PWD, fail);
-				return (1);
-			}
+			chdir(home);
 		}
+		new_PWD[2] = home, _setenv(line, new_PWD, fail);
+		return (1);
 	}
 	chdir(args[1]);
 	new_PWD[2] = args[1], error_check = chdir(args[1]);
 	if (error_check != 0)
 	{
-		write(STDOUT_FILENO, error, _strlen(error));
-		write(1, args[1], _strlen(args[1])), write(STDOUT_FILENO, &finish, 1);
+		return (1);
 	}
 	else
 		_setenv(line, new_PWD, fail);
@@ -67,10 +66,11 @@ int ext(char *line, char **args, int *fail)
 		}
 		else
 		{
-			write(STDOUT_FILENO, error, _strlen(error));
-			write(STDOUT_FILENO, args[1], _strlen(args[1]));
-			write(STDOUT_FILENO, &finish, 1);
-			return (1);
+			*fail = 2;
+			write(STDERR_FILENO, error, _strlen(error));
+			write(STDERR_FILENO, args[1], _strlen(args[1]));
+			write(STDERR_FILENO, &finish, 1);
+			return (2);
 		}
 	}
 	free(line), free(args);
@@ -95,5 +95,7 @@ int _env(char *l, char **args __attribute__((unused)), int *fail)
 		write(STDOUT_FILENO, "\n", 1);
 	}
 	*fail = 0;
+	if (i == 10)
+		free(environ[i - 1]);
 	return (1);
 }

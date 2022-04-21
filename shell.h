@@ -7,12 +7,12 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 #include <sys/stat.h>
+#include <string.h>
 #define BUFSIZE 5024
-#define DELIMITERS " =:;\t\"\n+"
+#define DELIMITERS " =:;\'\t\"\r\n+"
 #define UNUSED(x) (void)(x)
 
 extern char **environ;
-/*static char **last_environ;*/
 /**
  * struct build_in - Struct of pointers to funtions
  * @build_in: build_in identifier
@@ -28,8 +28,6 @@ int _isalpha(char *s);
 int _atoi(char *s);
 char *_getenv(const char *name);
 char *read_input(int *fail);
-char *_getline();
-char *_strtok(char *str, char *d);
 void shell_start(char *exe);
 char **av_line_saver(char *line);
 int _process_launcher(char **args, int *fail);
