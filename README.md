@@ -34,7 +34,7 @@ DESCRIPTION
 
 WORK FLOW
 
-	![Image text](https://www.bodegalibre.com/storage/flowchart_simple_shell.jpg)
+![Image text](https://www.bodegalibre.com/storage/flowchart_simple_shell.jpg)
 
 
 OPTIONS
