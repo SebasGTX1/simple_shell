@@ -1,4 +1,5 @@
 #include "shell.h"
+#include <string.h>
 /**
  * av_line_saver - save the arguments of the line in a buffer
  * @line: the line to be saved
@@ -15,12 +16,12 @@ char **av_line_saver(char *line)
 	{
 		exit(EXIT_FAILURE);
 	}
-	token = _strtok(line, DELIMITERS);
+	token = strtok(line, DELIMITERS);
 	while (token)
 	{
 		tokens[i] = token;
 		i++;
-		token = _strtok(NULL, DELIMITERS);
+		token = strtok(NULL, DELIMITERS);
 	}
 	tokens[i] = NULL;
 	free(token);
