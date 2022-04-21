@@ -12,8 +12,11 @@ char **av_line_saver(char *line)
 	char **tokens = malloc(bufsize * sizeof(char *));
 	char *token;
 
+	while (*line == ' ')
+		line++;
 	if (!tokens)
 	{
+		free(tokens);
 		exit(EXIT_FAILURE);
 	}
 	token = strtok(line, DELIMITERS);
