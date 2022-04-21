@@ -7,13 +7,13 @@ SeRiShell(C17 0x16. C)                                            SeRiShell(C17 
 
 This is the manpage of the SeRiShell project in Holberton School
 
-NAME
+###NAME
        SeRiShell - Standard input line for receiving instructions via commands
 
-SYNOPSIS
+###SYNOPSIS
        [COMMAND] [FLAGS]
 
-DESCRIPTION
+###DESCRIPTION
        SeRiShell()
 
        The  SeRiShell  program  displays a prompt with standard input line for receiving
@@ -22,10 +22,10 @@ DESCRIPTION
 
        man ./man_1_simple_shell Display this manual
 
-OPTIONS
+###OPTIONS
        Un listado de las posibles opciones y qué hace cada una.
 
-EXAMPLES
+###EXAMPLES
        SeRiShell:/simple_shell$ ls   List directory contents
 
        SeRiShell:/simple_shell$ ls -a     List directory contents including hide files
@@ -40,17 +40,17 @@ EXAMPLES
 
        SeRiShell:/simple_shell$ cd - Move the cursor to the previous directory
 
-EXIT VALUES
+###EXIT VALUES
        Posibles códigos de retorno y su significado.
 
-SEE ALSO
+###SEE ALSO
        Full documentation at: <https://github.com/SebasGTX1/simple_shell>
 
        Relative commands and functions
-BUGS
+###BUGS
        Lista de bugs que han presentado versiones anteriores.
 
-FILES
+###FILES
        Files included are:
 
        shell_start.c
@@ -85,14 +85,14 @@ FILES
 
        num_to_char.c
 
-HISTORY
+###HISTORY
        Historial de cambios.
 
-AUTHORS
+###AUTHORS
        Written by Sebastián García & Ricardo Montaña.
 
        21 April 2022
 
-COPYRIGHT
-       Especificar la información del copyright.
+###COPYRIGHT
+	© All rights reserved.
 
