@@ -60,14 +60,14 @@ This is the readme page of the SeRiShell project in Holberton School
 
 
 ### EXAMPLES
-	|  Command  |  Description  |
-        | ------------- | ------------- |
-	|SeRiShell:/simple_shell$ pwd | Shows current directory |
-	|SeRiShell:/simple_shell$ ls | List directory contents |
-	|SeRiShell:/simple_shell$ cd | Move the cursor at home directory |
-	|SeRiShell:/simple_shell$ cd [Directory] | Move the cursor to a lower directory |
-	|SeRiShell:/simple_shell$ cd .. | Move the cursor to the top directory |
-	|SeRiShell:/simple_shell$ cd - | Move the cursor to the previous directory |
+|  Command  |  Description  |
+| ------------- | ------------- |
+|SeRiShell:/simple_shell$ pwd | Shows current directory |
+|SeRiShell:/simple_shell$ ls | List directory contents |
+|SeRiShell:/simple_shell$ cd | Move the cursor at home directory |
+|SeRiShell:/simple_shell$ cd [Directory] | Move the cursor to a lower directory |
+|SeRiShell:/simple_shell$ cd .. | Move the cursor to the top directory |
+|SeRiShell:/simple_shell$ cd - | Move the cursor to the previous directory |
 
 
 ### EXIT VALUES ...
