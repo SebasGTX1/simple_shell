@@ -22,7 +22,7 @@ man ./man_1_simple_shell	Display this manual
 
 The ls command can be used with the following flags:
 
--a	List directory contents including hide files
+-a	List directory contents including hide files.
 
 -l	List directory contents using a long format
 
