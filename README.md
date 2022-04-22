@@ -6,24 +6,24 @@ In this repo, Ricardo Montaña and I, have created our own Shell!! Yeahh!!
 This is the readme page of the SeRiShell project in Holberton School
 
 
-###NAME
+### NAME
 
        SeRiShell - Standard input line for receiving instructions via commands
 
 
-###SYNOPSIS
+### SYNOPSIS
 
        [COMMAND] [FLAGS]
 
 
-###ABOUT SERISHELL PROJECT
+### ABOUT SERISHELL PROJECT
 
        The SeRiShell project is just a small version of the linux shell.
        This project was developed in the C programming language, through
        which many functionalities that a real shell does can be executed.
 
 
-###DESCRIPTION
+### DESCRIPTION
 
        The shell is a program that receives instructions from the keyboard
        through the terminal and passes them to the operating system for execution.
