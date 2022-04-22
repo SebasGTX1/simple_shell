@@ -84,7 +84,7 @@ memory_allocation.c
 num_to_char.c
 
 .SH HISTORY
-Since the alpha version no new versions have been made.
+This is the first version of SeRiShell.
 
 .SH AUTHORS
 Written by Sebastián García & Ricardo Montaña.
