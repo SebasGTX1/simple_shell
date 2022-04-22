@@ -70,7 +70,7 @@ EXAMPLES
 
 EXIT VALUES ...
 
-       This is the list of output values and their meaning.
+       This is the list of output values and their meaning. This program is still under review.
 
 SEE ALSO
 
@@ -80,7 +80,7 @@ SEE ALSO
 
 BUGS
 
-       Here is a small list of bugs that were fixed.
+       Here is a small list of bugs that were fixed. This program is still under review.
 
 FILES
 
@@ -120,7 +120,7 @@ FILES
 
 HISTORY
 
-       Since the alpha version no new versions have been made.
+       This is the first version of SeRiShell.
 
 AUTHORS
 
