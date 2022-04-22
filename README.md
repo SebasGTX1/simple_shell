@@ -33,7 +33,7 @@ DESCRIPTION....
        man ./man_1_simple_shell Display this manual
 
 
-INSTALATION
+INSTALATION ....
 
    - Clone the repository.
    - Compile: `gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
