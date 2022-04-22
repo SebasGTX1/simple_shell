@@ -8,7 +8,7 @@ This is the manpage of the SeRiShell project in Holberton School
 .SH SYNOPSIS
 .B [COMMAND] [FLAGS]
 
-.SH DESCRIPTION......................
+.SH DESCRIPTION..................
 .B \fBSeRiShell\fR
 
 The \fBSeRiShell\fR program displays a prompt with standard input line for
