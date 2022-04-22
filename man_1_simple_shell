@@ -40,13 +40,14 @@ SeRiShell:/simple_shell$ cd ..		Move the cursor to the top directory
 SeRiShell:/simple_shell$ cd -		Move the cursor to the previous directory
 
 .SH EXIT VALUES ...
-This is the list of output values and their meaning.
+This is the list of output values and their meaning. This program is still under review.
+
 .SH SEE ALSO
 Full documentation at: <https://github.com/SebasGTX1/simple_shell>
 
 Relative commands and functions
 .SH BUGS
-Here is a small list of bugs that were fixed.
+Here is a small list of bugs that were fixed. This program is still under review.
 .SH FILES
 Files included are:
 
