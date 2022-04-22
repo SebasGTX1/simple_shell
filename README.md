@@ -3,7 +3,7 @@ In this repo, Ricardo Montaña and I, have created our own Shell!! Yeahh!!
 
 ## SeRiShell C17 0x16.C
 
-This is the manpage of the SeRiShell project in Holberton School
+This is the readme page of the SeRiShell project in Holberton School
 
 NAME
 
