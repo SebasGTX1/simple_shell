@@ -9,7 +9,7 @@ This is the manpage of the SeRiShell project in Holberton School
 .B [COMMAND] [FLAGS]
 
 .SH DESCRIPTION
-.B \fBSeRiShell()\fR
+.B \fBSeRiShell\fR
 
 The \fBSeRiShell\fR program displays a prompt with standard input line for
 receiving instructions vía commands like the linux shell interpreter.
@@ -27,17 +27,17 @@ The ls command can be used with the following flags:
 -l	List directory contents using a long format
 
 .SH EXAMPLES
-SeRiShell:/simple_shell$ pwd    Shows current directory
+SeRiShell:/simple_shell$ pwd		Shows current directory
 
-SeRiShell:/simple_shell$ ls	List directory contents
+SeRiShell:/simple_shell$ ls		List directory contents
 
-SeRiShell:/simple_shell$ cd	Move the cursor at home directory
+SeRiShell:/simple_shell$ cd		Move the cursor at home directory
 
 SeRiShell:/simple_shell$ cd [Directory]	Move the cursor to a lower directory
 
-SeRiShell:/simple_shell$ cd ..	Move the cursor to the top directory
+SeRiShell:/simple_shell$ cd ..		Move the cursor to the top directory
 
-SeRiShell:/simple_shell$ cd -	Move the cursor to the previous directory
+SeRiShell:/simple_shell$ cd -		Move the cursor to the previous directory
 
 .SH EXIT VALUES ...
 This is the list of output values and their meaning.
