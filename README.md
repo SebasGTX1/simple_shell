@@ -133,13 +133,13 @@ This is the readme page of the SeRiShell project in Holberton School
        This is the first version of SeRiShell.
 
 
-AUTHORS
+### AUTHORS
 
        Written by Sebastián García & Ricardo Montaña.
 
        21 April 2022
 
 
-COPYRIGHT
+### COPYRIGHT
 
        © All rights reserved
