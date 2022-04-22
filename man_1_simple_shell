@@ -8,17 +8,17 @@ This is the manpage of the SeRiShell project in Holberton School
 .SH SYNOPSIS
 .B [COMMAND] [FLAGS]
 
-.SH DESCRIPTION
+.SH DESCRIPTION.......................................
 .B \fBSeRiShell\fR
 
 The \fBSeRiShell\fR program displays a prompt with standard input line for
 receiving instructions vía commands like the linux shell interpreter.
 For example, if a user enters ls then the shell executes the ls command.
 
-man ./man_1_simple_shell	Display this manual
+man ./man_1_simple_shell		Display this manual
 
 
-.SH OPTIONS ...
+.SH OPTIONS
 
 The ls command can be used with the following flags:
 
