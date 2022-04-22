@@ -24,13 +24,25 @@ DESCRIPTION
        The shell is a program that receives instructions from the keyboard
        through the terminal and passes them to the operating system for execution.
 
-       SeRiShell()
+       SeRiShell
 
        The  SeRiShell  program  displays a prompt with standard input line for receiving
        instructions vía commands like the linux shell interpreter.  For  example,  if  a
        user enters ls then the shell executes the ls command.
 
        man ./man_1_simple_shell Display this manual
+
+
+INSTALATION
+
+Clone the repository.
+
+Compile: `gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
+
+Run the shell in interactive mode: ./hsh
+
+Run the shell in non-interactive mode: Example echo "ls" | ./hsh
+
 
 WORK FLOW
 
