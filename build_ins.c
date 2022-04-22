@@ -10,7 +10,7 @@
 int _cd(char *line __attribute__((unused)), char **args, int *fail)
 {
 	int error_check;
-	char *home, end = '\n', cwd[PATH_MAX];
+	char *home, cwd[PATH_MAX];
 
 	UNUSED(fail);
 	if (!args[1])
@@ -29,14 +29,12 @@ int _cd(char *line __attribute__((unused)), char **args, int *fail)
 		{
 			error_check = chdir(home);
 		}
-		write(STDOUT_FILENO, home, _strlen(home));
-		write(STDOUT_FILENO, &end, 1);
 		return (1);
 	}
 	error_check = chdir(args[1]);
 	if (error_check == -1)
 	{
-		/*perror("hsh");*/
+		perror("hsh");
 		return (1);
 	}
 	else
