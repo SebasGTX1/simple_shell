@@ -32,6 +32,7 @@ DESCRIPTION
 
        man ./man_1_simple_shell Display this manual
 
+<<<<<<< HEAD
 
 INSTALATION
 
@@ -43,6 +44,13 @@ Run the shell in interactive mode: ./hsh
 
 Run the shell in non-interactive mode: Example echo "ls" | ./hsh
 
+=======
+INSTALATION
+   - Clone the repository.
+   - Compile: `gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
+   - Run the shell in interactive mode: `./hsh`
+   - Run the shell in non-interactive mode: Example `echo "ls" | ./hsh`
+>>>>>>> c83600fe11d7dc6e65f764562411e44319c6980e
 
 WORK FLOW
 

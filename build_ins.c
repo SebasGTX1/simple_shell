@@ -10,21 +10,16 @@
 int _cd(char *line __attribute__((unused)), char **args, int *fail)
 {
 	int error_check;
-	char *home, *new_PWD[4];
+	char *home, end = '\n', cwd[PATH_MAX];
 
 	UNUSED(fail);
-	new_PWD[0] = "CD_CALL", new_PWD[1] = "PWD", new_PWD[3] = NULL;
 	if (!args[1])
 	{
 		home = _getenv("HOME");
 		if (home)
 		{
-			chdir(home);
-			new_PWD[1] = "OLDPWD";
-			new_PWD[2] = _getenv("PWD"), _setenv(line, new_PWD, fail);
+			error_check = chdir(home);
 		}
-		new_PWD[1] = "PWD";
-		new_PWD[2] = home, _setenv(line, new_PWD, fail);
 		return (1);
 	}
 	if ((_strncmp("-", args[1], 1)) == 0)
@@ -32,22 +27,24 @@ int _cd(char *line __attribute__((unused)), char **args, int *fail)
 		home = _getenv("OLDPWD");
 		if (home)
 		{
-			chdir(home);
-			new_PWD[1] = "OLDPWD";
-			new_PWD[2] = _getenv("PWD"), _setenv(line, new_PWD, fail);
+			error_check = chdir(home);
 		}
-		new_PWD[1] = "PWD";
-		new_PWD[2] = home, _setenv(line, new_PWD, fail);
+		write(STDOUT_FILENO, home, _strlen(home));
+		write(STDOUT_FILENO, &end, 1);
 		return (1);
 	}
-	chdir(args[1]);
-	new_PWD[2] = args[1], error_check = chdir(args[1]);
-	if (error_check != 0)
+	error_check = chdir(args[1]);
+	if (error_check == -1)
 	{
+		/*perror("hsh");*/
 		return (1);
 	}
 	else
-		_setenv(line, new_PWD, fail);
+	{
+		getcwd(cwd, sizeof(cwd));
+		setenv("OLDPWD", getenv("PWD"), 1);
+		setenv("PWD", cwd, 1);
+	}
 	return (1);
 }
 /**

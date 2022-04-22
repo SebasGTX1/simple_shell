@@ -8,7 +8,7 @@
 
 char **av_line_saver(char *line)
 {
-	int bufsize = BUFSIZE, i = 0;
+	int bufsize = BUFSIZE, i = 0, bol = 0;
 	char **tokens = malloc(bufsize * sizeof(char *));
 	char *token;
 
@@ -23,10 +23,16 @@ char **av_line_saver(char *line)
 	while (token)
 	{
 		tokens[i] = token;
+		if (tokens[i][0] == '#')
+		{
+			bol = 1;
+			break;
+		}
 		i++;
 		token = strtok(NULL, DELIMITERS);
 	}
 	tokens[i] = NULL;
-	free(token);
+	if (bol == 0)
+		free(token);
 	return (tokens);
 }
