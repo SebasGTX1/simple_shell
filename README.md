@@ -1,5 +1,5 @@
 # simple_shell
-In this repo, Ricardo Montaña and me created our own Shell!! Yeahh!!
+In this repo, Ricardo Montaña and I, have created our own Shell!! Yeahh!!
 
 ## SeRiShell C17 0x16.C
 
