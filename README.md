@@ -16,7 +16,7 @@ This is the readme page of the SeRiShell project in Holberton School
        [COMMAND] [FLAGS]
 
 
-### ABOUT SERISHELL PROJECT
+### ABOUT SeRiShell PROJECT
 
        The SeRiShell project is just a small version of the linux shell.
        This project was developed in the C programming language, through
@@ -37,7 +37,7 @@ This is the readme page of the SeRiShell project in Holberton School
        man ./man_1_simple_shell Display this manual
 
 
-INSTALATION
+### INSTALATION
 
    - Clone the repository.
    - Compile: `gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
@@ -45,12 +45,12 @@ INSTALATION
    - Run the shell in non-interactive mode: Example `echo "ls" | ./hsh`
 
 
-WORK FLOW ....
+### WORK FLOW
 
 ![Image text](https://www.bodegalibre.com/storage/flowchart_simple_shell_en.jpg)
 
 
-OPTIONS
+### OPTIONS
 
        The ls command can be used with the following flags:
 
