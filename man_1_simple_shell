@@ -24,7 +24,7 @@ The ls command can be used with the following flags:
 
 -a	List directory contents including hide files.
 
--l	List directory contents using a long format
+-l	List directory contents using a long format.
 
 .SH EXAMPLES
 SeRiShell:/simple_shell$ pwd		Shows current directory
