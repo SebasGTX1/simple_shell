@@ -19,7 +19,7 @@ ABOUT SERISHELL PROJECT
        This project was developed in the C programming language, through
        which many functionalities that a real shell does can be executed.
 
-DESCRIPTION....
+DESCRIPTION
 
        The shell is a program that receives instructions from the keyboard
        through the terminal and passes them to the operating system for execution.
@@ -33,7 +33,7 @@ DESCRIPTION....
        man ./man_1_simple_shell Display this manual
 
 
-INSTALATION ....
+INSTALATION
 
    - Clone the repository.
    - Compile: `gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
@@ -41,7 +41,7 @@ INSTALATION ....
    - Run the shell in non-interactive mode: Example `echo "ls" | ./hsh`
 
 
-WORK FLOW
+WORK FLOW ....
 
 ![Image text](https://www.bodegalibre.com/storage/flowchart_simple_shell_en.jpg)
 
