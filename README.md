@@ -127,15 +127,18 @@ FILES
 
        num_to_char.c
 
+
 HISTORY
 
        This is the first version of SeRiShell.
+
 
 AUTHORS
 
        Written by Sebastián García & Ricardo Montaña.
 
        21 April 2022
+
 
 COPYRIGHT
 
