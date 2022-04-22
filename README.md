@@ -59,7 +59,7 @@ This is the readme page of the SeRiShell project in Holberton School
        -l   List directory contents using a long format
 
 
-EXAMPLES
+### EXAMPLES
 
        SeRiShell:/simple_shell$ pwd    Shows current directory
 
@@ -74,24 +74,24 @@ EXAMPLES
        SeRiShell:/simple_shell$ cd - Move the cursor to the previous directory
 
 
-EXIT VALUES ...
+### EXIT VALUES ...
 
        This is the list of output values and their meaning. This program is still under review.
 
 
-SEE ALSO
+### SEE ALSO
 
        Full documentation at: <https://github.com/SebasGTX1/simple_shell>
 
        Relative commands and functions
 
 
-BUGS
+### BUGS
 
        Here is a small list of bugs that were fixed. This program is still under review.
 
 
-FILES
+### FILES
 
        Files included are:
 
@@ -128,7 +128,7 @@ FILES
        num_to_char.c
 
 
-HISTORY
+### HISTORY
 
        This is the first version of SeRiShell.
 
